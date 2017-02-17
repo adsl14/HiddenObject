@@ -34,7 +34,7 @@ PlayState.preload = function () {
 		this.addImage('UI_' + [i], 'assets/img/UI_' + [i] + '.png');
 	}
 
-    this.addImage('UI_btn', 'assets/img/UI_btn.png');
+    
 };	
 
 /**
