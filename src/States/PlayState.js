@@ -6,10 +6,6 @@ var totalObjects = 5;
 // Number of total objects on screen (this is the difficulty of the game)
 var totalObjectsOnscreen = 10;
 
-// This variable will be used to save the preview option (the hidden object selected)
-var Oldopcion;
-
-
 /**
 * The PlayState in the core state that is used in the game.
 *
@@ -97,7 +93,7 @@ PlayState.addObjects = function () {
 		var opcion = Math.floor((Math.random() * totalObjects) + 1);
 
 		//This will be used to know the preview option
-		Oldopcion = opcion;
+		var Oldopcion = opcion;
 
 		//This will add the real hiddenObject
 		this.addHiddenObject([opcion], Math.random() * 600, Math.random() * 700);
@@ -117,6 +113,7 @@ PlayState.addObjects = function () {
 
 			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * 600, Math.random() * 700);
 			this['object' + j].input.onDown.add(this.clickWrongObject, this);
+			this['object' + j].hiddenObjectNumber= Oldopcion;
 			this.addChild(this['object' + j]);
 		}
 	}
@@ -162,11 +159,11 @@ PlayState.clickWrongObject = function (object) {
 		}
 
 		//If the real hidden object was created before, then this will delete it
-		if (this['hiddenObject' + Oldopcion])
+		if (this['hiddenObject' + object.hiddenObjectNumber])
 		{
-			this['hiddenObject' + Oldopcion].destroy();
-			this['UIBase' + Oldopcion].destroy();
-			this['UIButton' + Oldopcion].destroy();
+			this['hiddenObject' + object.hiddenObjectNumber].destroy();
+			this['UIBase' + object.hiddenObjectNumber].destroy();
+			this['UIButton' + object.hiddenObjectNumber].destroy();
 		}
 
 		this.addObjects(totalObjects);
