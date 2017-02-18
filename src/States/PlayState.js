@@ -3,7 +3,7 @@ var PlayState = new Kiwi.State('PlayState');
 // Number of total objects
 var totalObjects = 5;
 
-
+var Oldopcion;
 
 
 /**
@@ -96,6 +96,9 @@ PlayState.addObjects = function (totalObjects) {
 	var j = 1;
 	var check = false;
 
+	//This wil be used to known the preview option
+	Oldopcion = opcion;
+
 	//This 'for' will stop when it finds the hiddenObject number
 	for(i=1;i <= totalObjects && check != true; ++i)
 	{
@@ -106,6 +109,7 @@ PlayState.addObjects = function (totalObjects) {
 				this['object' + j].destroy();
 
 			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + i],Math.random() * 600, Math.random() * 700);
+			this['object' + j].input.onDown.add(this.clickWrongObject, this);
 			this.addChild(this['object' + j]);
 			j = j + 1;
 		}
@@ -120,7 +124,9 @@ PlayState.addObjects = function (totalObjects) {
 		// Check if the object was created before and delete it
 		if(this['object' + j])
 			this['object' + j].destroy();
+
 		this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + k],Math.random() * 600, Math.random() * 700);
+		this['object' + j].input.onDown.add(this.clickWrongObject, this);
 		this.addChild(this['object' + j]);
 		j = j + 1;
 	}
@@ -154,6 +160,27 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this.addChild(this['UIButton' + objName]);
 
     //this.hiddenObjects.push(this['hiddenObject' + objName]);
+}
+
+PlayState.clickWrongObject = function (object) {
+
+	//Decrease score
+	if(this.scoreCount > 0)
+	{
+		this.scoreCount = this.scoreCount - 5;
+		this.scoreText.text = "Puntuación: " + this.scoreCount;
+	}
+
+	//If the real hidden object was created before, then this will delete it
+	if(this['hiddenObject' + Oldopcion])
+	{
+		this['hiddenObject' + Oldopcion].destroy();
+		this['UIBase' + Oldopcion].destroy();
+		this['UIButton' + Oldopcion].destroy();
+	}
+
+	this.addObjects(totalObjects);
+
 }
 
 /**
