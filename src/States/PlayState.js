@@ -29,9 +29,6 @@ PlayState.preload = function () {
     //Otherwise the loading graphics will load last, and that defies the whole point in loading them.
     KiwiLoadingScreen.prototype.preload.call(this);
 
-	// Numbers of objects
-	var totalObjects = 5;
-
     this.addImage('bg', 'assets/img/bg.png');
 
 	for(i=1; i<= totalObjects; ++i)
@@ -91,31 +88,33 @@ PlayState.create = function () {
 
 PlayState.addObjects = function (totalObjects) {
 
-	var opcion = Math.floor((Math.random() * totalObjects) + 1);
-	var j = 1;
-
-	//This will be used to know the preview option
-	Oldopcion = opcion;
-
-	//This 'for' will add all the objects excepts the hidden one
-	for(i=1;i <= totalObjects; ++i)
+	if (this.timerCount > 0)
 	{
-		if(i != opcion)
-		{
-			// Check if the object was created before and delete it
-			if(this['object' + j])
-				this['object' + j].destroy();
+		var opcion = Math.floor((Math.random() * totalObjects) + 1);
+		var j = 1;
 
-			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + i],Math.random() * 600, Math.random() * 700);
-			this['object' + j].input.onDown.add(this.clickWrongObject, this);
-			this.addChild(this['object' + j]);
-			j = j + 1;
-		}
+		//This will be used to know the preview option
+		Oldopcion = opcion;
 
+		//This will add the real hiddenObject
+		this.addHiddenObject([opcion], Math.random() * 600, Math.random() * 700);
+
+		//This 'for' will add all the objects excepts the hidden one
+			for (i = 1; i <= totalObjects; ++i)
+			{
+				if (i != opcion)
+				{
+					// Check if the object was created before and delete it
+					if (this['object' + j])
+						this['object' + j].destroy();
+
+					this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + i], Math.random() * 600, Math.random() * 700);
+					this['object' + j].input.onDown.add(this.clickWrongObject, this);
+					this.addChild(this['object' + j]);
+					j = j + 1;
+				}
+			}
 	}
-
-	//This will add the real hiddenObject
-	this.addHiddenObject([opcion], Math.random() * 600, Math.random() * 700);
 }
 
 /**
@@ -147,22 +146,25 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
 
 PlayState.clickWrongObject = function (object) {
 
-	//Decrease score
-	if(this.scoreCount > 0)
+	if(this.timerCount > 0)
 	{
-		this.scoreCount = this.scoreCount - 5;
-		this.scoreText.text = "Puntuación: " + this.scoreCount;
-	}
+		//Decrease score
+		if (this.scoreCount > 0)
+		{
+			this.scoreCount = this.scoreCount - 5;
+			this.scoreText.text = "Puntuación: " + this.scoreCount;
+		}
 
-	//If the real hidden object was created before, then this will delete it
-	if(this['hiddenObject' + Oldopcion])
-	{
-		this['hiddenObject' + Oldopcion].destroy();
-		this['UIBase' + Oldopcion].destroy();
-		this['UIButton' + Oldopcion].destroy();
-	}
+		//If the real hidden object was created before, then this will delete it
+		if (this['hiddenObject' + Oldopcion])
+		{
+			this['hiddenObject' + Oldopcion].destroy();
+			this['UIBase' + Oldopcion].destroy();
+			this['UIButton' + Oldopcion].destroy();
+		}
 
-	this.addObjects(totalObjects);
+		this.addObjects(totalObjects);
+	}
 
 }
 
