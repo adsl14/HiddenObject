@@ -87,7 +87,7 @@ PlayState.create = function () {
 /**
  * This method adds all objects onto the game. Also, the real hidden object
  *
- * @method addHiddenObject
+ * @method addObjects
  */
 
 PlayState.addObjects = function () {
@@ -132,6 +132,7 @@ PlayState.addObjects = function () {
 * @param objY{Number}
 */
 PlayState.addHiddenObject = function (objName, objX, objY) {
+
     //Object hidden on the stage
     this['hiddenObject' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + objName], objX, objY);
     this['hiddenObject' + objName].objName = objName;
@@ -194,10 +195,7 @@ PlayState.clickObject = function (hiddenObj) {
 		this.scoreText.text = "Puntuación: " + this.scoreCount;
 
 		// Adding again the new objects with new positions
-		this.addObjects(totalObjects);
-
-		// Reset the game and continue
-		allFound = true;
+		this.addObjects();
 	}
 
 }
