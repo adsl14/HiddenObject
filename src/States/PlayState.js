@@ -1,8 +1,12 @@
 var PlayState = new Kiwi.State('PlayState');
 
-// Number of total objects
+// Number of total images that the game will use
 var totalObjects = 5;
 
+// Number of total objects on screen (this is the difficulty of the game)
+var totalObjectsOnscreen = 10;
+
+// This variable will be used to save the preview option (the hidden object selected)
 var Oldopcion;
 
 
@@ -91,7 +95,6 @@ PlayState.addObjects = function (totalObjects) {
 	if (this.timerCount > 0)
 	{
 		var opcion = Math.floor((Math.random() * totalObjects) + 1);
-		var j = 1;
 
 		//This will be used to know the preview option
 		Oldopcion = opcion;
@@ -100,20 +103,22 @@ PlayState.addObjects = function (totalObjects) {
 		this.addHiddenObject([opcion], Math.random() * 600, Math.random() * 700);
 
 		//This 'for' will add all the objects excepts the hidden one
-			for (i = 1; i <= totalObjects; ++i)
+		for (j = 1; j <= totalObjectsOnscreen-1; ++j)
+		{
+			do
 			{
-				if (i != opcion)
-				{
-					// Check if the object was created before and delete it
-					if (this['object' + j])
-						this['object' + j].destroy();
+				opcion = Math.floor((Math.random() * totalObjects) + 1);
 
-					this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + i], Math.random() * 600, Math.random() * 700);
-					this['object' + j].input.onDown.add(this.clickWrongObject, this);
-					this.addChild(this['object' + j]);
-					j = j + 1;
-				}
-			}
+			}while(Oldopcion == opcion);
+
+			// Check if the object was created before and delete it
+			if (this['object' + j])
+				this['object' + j].destroy();
+
+			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * 600, Math.random() * 700);
+			this['object' + j].input.onDown.add(this.clickWrongObject, this);
+			this.addChild(this['object' + j]);
+		}
 	}
 }
 
