@@ -80,7 +80,7 @@ PlayState.create = function () {
     this.timerCount = 60;
 
 	//Add all the hidden objects and their corresponding UI preview images. Give the item random coordinates but inside of the game space.
-	this.addObjects(totalObjects);
+	this.addObjects();
 
 }
 
@@ -90,7 +90,7 @@ PlayState.create = function () {
  * @method addHiddenObject
  */
 
-PlayState.addObjects = function (totalObjects) {
+PlayState.addObjects = function () {
 
 	if (this.timerCount > 0)
 	{
