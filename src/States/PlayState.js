@@ -91,16 +91,14 @@ PlayState.create = function () {
 
 PlayState.addObjects = function (totalObjects) {
 
-	//Add all the hidden objects again and their corresponding UI preview images. Give the item random coordinates but inside of the game space.
 	var opcion = Math.floor((Math.random() * totalObjects) + 1);
 	var j = 1;
-	var check = false;
 
-	//This wil be used to known the preview option
+	//This will be used to know the preview option
 	Oldopcion = opcion;
 
-	//This 'for' will stop when it finds the hiddenObject number
-	for(i=1;i <= totalObjects && check != true; ++i)
+	//This 'for' will add all the objects excepts the hidden one
+	for(i=1;i <= totalObjects; ++i)
 	{
 		if(i != opcion)
 		{
@@ -113,22 +111,7 @@ PlayState.addObjects = function (totalObjects) {
 			this.addChild(this['object' + j]);
 			j = j + 1;
 		}
-		else
-			check = true;
 
-	}
-
-	//This for will add the rest of the objects
-	for(k=i; k <= totalObjects; ++k)
-	{
-		// Check if the object was created before and delete it
-		if(this['object' + j])
-			this['object' + j].destroy();
-
-		this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + k],Math.random() * 600, Math.random() * 700);
-		this['object' + j].input.onDown.add(this.clickWrongObject, this);
-		this.addChild(this['object' + j]);
-		j = j + 1;
 	}
 
 	//This will add the real hiddenObject
