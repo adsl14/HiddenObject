@@ -1,0 +1,3 @@
+Objetos: 231x204 px (originalmente)
+MiniObjetos: 150x150 px
+UI_button: 150x150 px
