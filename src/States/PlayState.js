@@ -4,7 +4,7 @@ var PlayState = new Kiwi.State('PlayState');
 var totalObjects = 5;
 
 // Number of total objects on screen (this is the difficulty of the game)
-var totalObjectsOnscreen = 10;
+var totalObjectsOnscreen = 6;
 
 /**
 * The PlayState in the core state that is used in the game.
