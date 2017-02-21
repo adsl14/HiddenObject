@@ -68,7 +68,7 @@ PlayState.create = function () {
     this.addChild(this.bg);
 
     //Add a score
-    this.scoreText = new Kiwi.GameObjects.Textfield( this, "Puntuación: 0", 750, 1120, "#000", 50, 'normal', 'Arial Black' );
+    this.scoreText = new Kiwi.GameObjects.Textfield( this, "0", 1090, 1120, "#000", 50, 'normal', 'Arial Black' );
     this.addChild( this.scoreText );
     this.scoreCount = 0;
 
@@ -167,7 +167,7 @@ PlayState.clickWrongObject = function (object) {
 		if (this.scoreCount > 0)
 		{
 			this.scoreCount = this.scoreCount - 5;
-			this.scoreText.text = "Puntuación: " + this.scoreCount;
+			this.scoreText.text = this.scoreCount;
 		}
 
 		//If the real hidden object was created before, then this will delete it
@@ -201,7 +201,7 @@ PlayState.clickObject = function (hiddenObj) {
 
 		// Add score
 		this.scoreCount = this.scoreCount + 10;
-		this.scoreText.text = "Puntuación: " + this.scoreCount;
+		this.scoreText.text = this.scoreCount;
 
 		// Adding again the new objects with new positions
 		this.addObjects();
