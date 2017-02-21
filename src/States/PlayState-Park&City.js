@@ -1,7 +1,7 @@
 var PlayState = new Kiwi.State('PlayState');
 
 // Number of total images that the game will use
-var totalObjects = 10;
+var totalObjects = 20;
 
 // Number of total objects on screen (this is the difficulty of the game)
 var totalObjectsOnscreen = 10;
