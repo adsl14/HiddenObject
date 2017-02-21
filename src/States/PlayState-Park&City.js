@@ -13,8 +13,8 @@ var heigh = 1200;
 var width = 1200;
 
 // This values will be used to put the objects on the screen
-var objectPosX = width - 168;
-var objectPosY = heigh - 324;
+var objectPosX = width - 168; // Original --> 168
+var objectPosY = heigh - 500; // Original --> 324
 
 //
 
