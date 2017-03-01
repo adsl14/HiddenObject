@@ -75,6 +75,8 @@ PlayState.create = function () {
 
     //Add bg
     this.bg = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.bg, 0, 0);
+    //this.bg.scaleX = 3.55;
+    //this.bg.scaleY = 1.1;
     this.addChild(this.bg);
 
     //Add a score

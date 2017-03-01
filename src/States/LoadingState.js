@@ -24,9 +24,13 @@ var width = window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
 
+var width = 1200;
+
 var heigh = window.innerHeight
     || document.documentElement.clientHeight
     || document.body.clientHeight;
 
-var LoadingState = new KiwiLoadingScreen('LoadingState',  'IntroState', {width:1200, height: 1200}, 'assets/img/loading/');
+var heigh = 1200;
+
+var LoadingState = new KiwiLoadingScreen('LoadingState',  'IntroState', {width:width, height: heigh}, 'assets/img/loading/');
 
