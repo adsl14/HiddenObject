@@ -19,5 +19,14 @@
 * 3 - dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}
 * 4 - subfolder {String} The folder that the loading graphics are located at. 
 */
+
+var width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+var heigh = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+
 var LoadingState = new KiwiLoadingScreen('LoadingState',  'IntroState', {width:1200, height: 1200}, 'assets/img/loading/');
 

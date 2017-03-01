@@ -7,9 +7,19 @@ var totalObjects = 29;
 var totalObjectsOnscreen = 10;
 
 // Height of the background
+
+var heigh = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+
 var heigh = 1200;
 
 // Width of the background
+
+var width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
 var width = 1200;
 
 // This values will be used to put the objects on the screen
