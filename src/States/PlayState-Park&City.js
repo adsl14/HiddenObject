@@ -4,7 +4,7 @@ var PlayState = new Kiwi.State('PlayState');
 var totalObjects = 29;
 
 // Number of total objects on screen (this is the difficulty of the game)
-var totalObjectsOnscreen = 30;
+var totalObjectsOnscreen = 20;
 
 // Height of the background (display)
 var heigh = window.innerHeight
