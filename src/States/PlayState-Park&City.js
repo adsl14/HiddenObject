@@ -136,11 +136,6 @@ PlayState.addObjects = function () {
 			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * objectPosX, Math.random() * objectPosY);
 			this['object' + j].input.onDown.add(this.clickWrongObject, this);
 			this['object' + j].hiddenObjectNumber= Oldopcion;
-
-			// Ajust the image to the full screen
-			this['object' + j].scaleY = heigh/heighBg;
-			this['object' + j].scaleX = heigh/heighBg;
-
 			this.addChild(this['object' + j]);
 		}
 	}
@@ -161,11 +156,6 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this['hiddenObject' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + objName], objX, objY);
     this['hiddenObject' + objName].objName = objName;
     this['hiddenObject' + objName].input.onDown.add(this.clickObject, this);
-
-	// Ajust the image to the full screen
-	this['hiddenObject' + objName].scaleX = heigh/heighBg;
-	this['hiddenObject' + objName].scaleY = heigh/heighBg;
-
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
