@@ -20,17 +20,17 @@
 * 4 - subfolder {String} The folder that the loading graphics are located at. 
 */
 
+// width of the background (display)
+
 var width = window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
 
-var width = 1200;
+// Height of the background (display)
 
 var heigh = window.innerHeight
     || document.documentElement.clientHeight
     || document.body.clientHeight;
-
-var heigh = 1200;
 
 var LoadingState = new KiwiLoadingScreen('LoadingState',  'IntroState', {width:width, height: heigh}, 'assets/img/loading/');
 
