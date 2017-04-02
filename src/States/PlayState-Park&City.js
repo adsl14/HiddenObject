@@ -4,7 +4,7 @@ var PlayState = new Kiwi.State('PlayState');
 var totalObjects = 29;
 
 // Number of total objects on screen (this is the difficulty of the game)
-var totalObjectsOnscreen = 20;
+var totalObjectsOnscreen = 15;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -49,15 +49,15 @@ PlayState.preload = function () {
     //Otherwise the loading graphics will load last, and that defies the whole point in loading them.
     KiwiLoadingScreen.prototype.preload.call(this);
 
-    this.addImage('bg', 'assets/img/Park&City/bg.jpg');
+    this.addImage('bg', 'assets/img/Park&City/bg/bg.jpg');
 
 	for(i=1; i<= totalObjects; ++i)
 	{
-		this.addImage('hidden_' + [i], 'assets/img/Park&City/hidden_' + [i] + '.png');
-		this.addImage('UI_' + [i], 'assets/img/Park&City/UI_' + [i] + '.png');
+		this.addImage('hidden_' + [i], 'assets/img/Park&City/png/hidden_' + [i] + '.png');
+		this.addImage('UI_' + [i], 'assets/img/Park&City/png/UI_' + [i] + '.png');
 	}
 
-    this.addImage('UI_btn', 'assets/img/Park&City/UI_btn.png');
+    this.addImage('UI_btn', 'assets/img/Park&City/png/UI_btn.png');
 };
 
 /**
@@ -97,8 +97,8 @@ PlayState.create = function () {
     this.timer.createTimerEvent( Kiwi.Time.TimerEvent.TIMER_COUNT, this.onTimerCount, this );
     this.timerCount = 60;
 
-	//Add all the hidden objects and their corresponding UI preview images. Give the item random coordinates but inside of the game space.
-	this.addObjects();
+     //Add all the hidden objects and their corresponding UI preview images. Give the item random coordinates but inside of the game space.
+     this.addObjects();
 
 }
 
@@ -136,6 +136,7 @@ PlayState.addObjects = function () {
 			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * objectPosX, Math.random() * objectPosY);
 			this['object' + j].input.onDown.add(this.clickWrongObject, this);
 			this['object' + j].hiddenObjectNumber= Oldopcion;
+			this['object' + j].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
 			this.addChild(this['object' + j]);
 		}
 	}
@@ -156,6 +157,7 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this['hiddenObject' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + objName], objX, objY);
     this['hiddenObject' + objName].objName = objName;
     this['hiddenObject' + objName].input.onDown.add(this.clickObject, this);
+	this['hiddenObject' + objName].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
