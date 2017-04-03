@@ -206,7 +206,7 @@
       <workItem from="1488737291724" duration="608000" />
       <workItem from="1488763351834" duration="1505000" />
       <workItem from="1491151871243" duration="10013000" />
-      <workItem from="1491250615027" duration="4259000" />
+      <workItem from="1491250615027" duration="4266000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -222,11 +222,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491255678615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Añadido música y efectos de sonido.&#10;- Añadido aumento de tiempo al acertar">
+      <created>1491255684626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1491255684626</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16385000" />
+    <option name="totallyTimeSpent" value="16392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1032" extended-state="0" />
