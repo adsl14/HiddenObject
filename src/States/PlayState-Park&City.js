@@ -58,6 +58,13 @@ PlayState.preload = function () {
 	}
 
     this.addImage('UI_btn', 'assets/img/Park&City/png/UI_btn.png');
+
+	// Loading the sound effects
+	this.addAudio('wrong', './assets/audio/wrong.mp3');
+	this.addAudio('correct', './assets/audio/correct.mp3');
+
+	// Load the main theme
+	this.addAudio('music', './assets/audio/music.mp3');
 };
 
 /**
@@ -97,8 +104,18 @@ PlayState.create = function () {
     this.timer.createTimerEvent( Kiwi.Time.TimerEvent.TIMER_COUNT, this.onTimerCount, this );
     this.timerCount = 60;
 
-     //Add all the hidden objects and their corresponding UI preview images. Give the item random coordinates but inside of the game space.
-     this.addObjects();
+	// We create the audios
+	this.correct = new Kiwi.Sound.Audio(this.game, 'correct', 1, false); //false = replay audio. true = no replay audio
+	this.wrong = new Kiwi.Sound.Audio(this.game, 'wrong', 1, false);
+
+	// Playing the main song
+	this.music = new Kiwi.Sound.Audio(this.game, 'music', 1, false);
+
+	// Plays the music.
+	this.music.play();
+
+	//Add all the hidden objects and their corresponding UI preview images. Give the item random coordinates but inside of the game space.
+	this.addObjects();
 
 }
 
@@ -175,11 +192,15 @@ PlayState.clickWrongObject = function (object) {
 
 	if(this.timerCount > 0)
 	{
+		// We play the 'wrong' audio
+		this.wrong.play();
+
 		//Decrease score
 		if (this.scoreCount > 0)
 		{
 			this.scoreCount = this.scoreCount - 5;
 			this.scoreText.text = this.scoreCount;
+
 		}
 
 		//If the real hidden object was created before, then this will delete it
@@ -206,6 +227,9 @@ PlayState.clickObject = function (hiddenObj) {
 
 	if (this.timerCount > 0)
 	{
+		// We play the correct audio
+		this.correct.play();
+
 		//remove object and associated UI btn
 		hiddenObj.destroy();
 		this['UIBase' + hiddenObj.objName].destroy();
@@ -214,6 +238,10 @@ PlayState.clickObject = function (hiddenObj) {
 		// Add score
 		this.scoreCount = this.scoreCount + 10;
 		this.scoreText.text = this.scoreCount;
+
+		// Increase a little the time (+3)
+		this.timerCount = this.timerCount + 2;
+		this.counterText.text =  this.timerCount;
 
 		// Adding again the new objects with new positions
 		this.addObjects();
