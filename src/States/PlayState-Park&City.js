@@ -53,7 +53,7 @@ PlayState.preload = function () {
 
 	for(i=1; i<= totalObjects; ++i)
 	{
-		this.addImage('hidden_' + [i], 'assets/img/Park&City/png/hidden_' + [i] + '.png');
+		this.addImage('hidden_' + [i], 'assets/img/Park&City/svg/hidden_' + [i] + '.svg');
 		this.addImage('UI_' + [i], 'assets/img/Park&City/png/UI_' + [i] + '.png');
 	}
 
