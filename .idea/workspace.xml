@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/audio/music.mp3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/UI_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/png/hidden_9.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/UI_btn.png" afterPath="$PROJECT_DIR$/assets/img/Park&amp;City/UI_btn.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/PlayState.js" afterPath="$PROJECT_DIR$/src/States/PlayState.js" />
     </list>
     <ignored path="HiddenObject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,34 +25,12 @@
     <favorites_list name="HiddenObject" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadingState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="306">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,8 +39,8 @@
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="142" column="37" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -155,7 +73,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1032" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -185,6 +103,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HiddenObject/index.html">
@@ -274,7 +195,10 @@
       <workItem from="1491333869435" duration="841000" />
       <workItem from="1491851298850" duration="15509000" />
       <workItem from="1492026302269" duration="602000" />
-      <workItem from="1492117606006" duration="12634000" />
+      <workItem from="1492117606006" duration="13670000" />
+      <workItem from="1492135233233" duration="505000" />
+      <workItem from="1492135831750" duration="92000" />
+      <workItem from="1492135925869" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -318,11 +242,53 @@
       <option name="project" value="LOCAL" />
       <updated>1491867394387</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Mejorado el código y añadido el escenario 2 (dificultad normal)">
+      <created>1492134129424</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1492134129424</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Mejorado el código y añadido el escenario 2 (dificultad normal)">
+      <created>1492134568699</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1492134568699</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Mejorado el código y añadido el escenario 2 (dificultad normal)">
+      <created>1492134844072</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1492134844072</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Mejorado el código y añadido el escenario 2 (dificultad normal)">
+      <created>1492134885867</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1492134885867</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Mejorado el código y añadido el escenario 2">
+      <created>1492134919344</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1492134919344</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Mejorado el código y añadido el escenario 2">
+      <created>1492135242781</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1492135242781</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46976000" />
+    <option name="totallyTimeSpent" value="48833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1032" extended-state="0" />
@@ -359,247 +325,57 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
     <MESSAGE value="Los objetos en el escenario ahora se escalan al tamaño de ventana" />
     <MESSAGE value="- Añadido música y efectos de sonido.&#10;- Añadido aumento de tiempo al acertar" />
     <MESSAGE value="Arreglada la musica de fondo" />
     <MESSAGE value="Añadido sistema de niveles y eliminada la plantilla de por defecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido sistema de niveles y eliminada la plantilla de por defecto" />
+    <MESSAGE value="Mejorado el código y añadido el escenario 2 (dificultad normal) n" />
+    <MESSAGE value="Mejorado el código y añadido el escenario 2 (dificultad normal)" />
+    <MESSAGE value="Mejorado el código y añadido el escenario 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejorado el código y añadido el escenario 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2736">
-          <caret line="152" column="116" selection-start-line="152" selection-start-column="116" selection-end-line="152" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/src/States/PlayState.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/src/States/PlayState.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="125" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
     <entry file="file://$PROJECT_DIR$/../../../games4visual/public/js/games/juegoAvion.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22950">
@@ -608,36 +384,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
+    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
+    <entry file="file://$PROJECT_DIR$/src/game.js" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        <state relative-caret-position="306">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="100" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="142" column="37" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="37" />
           <folding />
         </state>
       </provider>
