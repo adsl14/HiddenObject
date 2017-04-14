@@ -1,7 +1,9 @@
 var PlayState = new Kiwi.State('PlayState');
 
-// Number of total images that the game will use
-var totalObjects = 29;
+// The level (stage of the game)
+// Park&City --> 1
+// Forest --> 2
+var level = 2;
 
 // Number of total objects on screen at the beginning (this is the difficulty of the game)
 var totalObjectsOnscreen = 5;
@@ -16,9 +18,24 @@ var width = window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
 
-// Size of the original image (bg.jpg)
-var heighBg = 1200;
-var widthBg = 1200;
+if (level == 1)
+{
+	// Size of the original image (bg.jpg)
+    var heighBg = 1200;
+    var widthBg = 1200;
+
+	// Number of total images that the game will use
+	var totalObjects = 29;
+}
+else if (level == 2)
+{
+    var heighBg = 2000;
+    var widthBg = 2000;
+
+	// Number of total images that the game will use
+	var totalObjects = 70;
+}
+
 
 // This values will be used to put the objects on the screen
 var objectPosX = width - 168; // Original --> 168
@@ -47,22 +64,40 @@ PlayState.preload = function () {
     //Otherwise the loading graphics will load last, and that defies the whole point in loading them.
     KiwiLoadingScreen.prototype.preload.call(this);
 
-    this.addImage('bg', 'assets/img/Park&City/bg/bg.jpg');
-
-	for(i=1; i<= totalObjects; ++i)
+    if(level == 1)
 	{
-		this.addImage('hidden_' + [i], 'assets/img/Park&City/svg/hidden_' + [i] + '.svg');
-		this.addImage('UI_' + [i], 'assets/img/Park&City/png/UI_' + [i] + '.png');
+		this.addImage('bg', 'assets/img/Park&City/bg/bg.jpg');
+
+		for(i=1; i<= totalObjects; ++i)
+			this.addImage('hidden_' + [i], 'assets/img/Park&City/svg/hidden_' + [i] + '.svg');
+
+		this.addImage('UI_btn', 'assets/img/Park&City/UI_btn.png');
+
+		// Loading the sound effects
+		this.addAudio('wrong', './assets/audio/wrong.mp3');
+		this.addAudio('correct', './assets/audio/correct.mp3');
+
+		// Load the main theme
+		this.addAudio('music', './assets/audio/level1.mp3');
 	}
 
-    this.addImage('UI_btn', 'assets/img/Park&City/png/UI_btn.png');
+    else if(level == 2)
+	{
+		this.addImage('bg', 'assets/img/Forest/bg/bg.jpg');
 
-	// Loading the sound effects
-	this.addAudio('wrong', './assets/audio/wrong.mp3');
-	this.addAudio('correct', './assets/audio/correct.mp3');
+		for(i=1; i<= totalObjects; ++i)
+			this.addImage('hidden_' + [i], 'assets/img/Forest/svg/hidden_' + [i] + '.svg');
 
-	// Load the main theme
-	this.addAudio('music', './assets/audio/music.mp3');
+		this.addImage('UI_btn', 'assets/img/Forest/UI_btn.png');
+
+		// Loading the sound effects
+		this.addAudio('wrong', './assets/audio/wrong.mp3');
+		this.addAudio('correct', './assets/audio/correct.mp3');
+
+		// Load the main theme
+		this.addAudio('music', './assets/audio/level2.mp3');
+	}
+
 };
 
 /**
@@ -73,9 +108,6 @@ PlayState.preload = function () {
 */
 PlayState.create = function () {
 
-    //Create our Hidden Object Arrays, This will store all of our hidden objects.
-    this.hiddenObjects = [];
-	this.totalObjects = 29;
     //Add bg
     this.bg = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.bg, (width/2)-(widthBg/2), (heigh/2)-(heighBg/2));
 	this.bg.scaleY = heigh/heighBg;
@@ -110,7 +142,12 @@ PlayState.create = function () {
 	// EXP BAR // This bar will be used to determine the next level
 	this.nextLevelBar = new Kiwi.HUD.Widget.Bar ( this.game, 0, 5, 210, heigh - 50, 500, 15 );
 	// Change the style of the bar
-	this.nextLevelBar.bar.style.backgroundColor = '#1E90FF';
+
+	if(level == 1)
+		this.nextLevelBar.bar.style.backgroundColor = '#1E90FF';
+	else if (level == 2)
+		this.nextLevelBar.bar.style.backgroundColor = "#ffc31e";
+
 	// Change the style of the HUD object
 	this.nextLevelBar.style.backgroundColor = '#C0C0C0';
 	this.nextLevelBar.style.boxShadow = '5px 5px 10px #000';
@@ -153,7 +190,7 @@ PlayState.addObjects = function () {
 		// When the player hits the counter.max correct clicks, the difficulty will increase (at the beginning is 5)
 		if(this.nextLevelBar.counter.current == this.nextLevelBar.counter.max)
 		{
-			totalObjectsOnscreen = totalObjectsOnscreen + 3; // Increase level
+			totalObjectsOnscreen = totalObjectsOnscreen + 1; // Increase level
 
 			// Updating the text "Level: X"
 			this.level = this.level + 1;
@@ -207,16 +244,34 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
 
 	//this['hiddenObject' + objName].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
 	this['hiddenObject' + objName].transform.scale = (width-800)/width; // The objects will be less large in order to get more images in the screen at the same time
-
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
-    this['UIBase' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.UI_btn, 110 * this.hiddenObjects.length + 50, heigh - 160);
+    this['UIBase' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.UI_btn,50,heigh - 160); // 50, heigh - 160
     this.addChild(this['UIBase' + objName])
 
     //UI preview image
-    this['UIButton' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['UI_' + objName], 110 * this.hiddenObjects.length + 50, heigh - 160);
-    this.addChild(this['UIButton' + objName]);
+    this['UIButton' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + objName]);
+
+	// We calculate and scale the new preview sprite and put it into the square box. This 'if' will be used to scale perfectly the new size of the sprite.
+	if(this['UIButton' + objName].width > this['UIButton' + objName].height)
+	{
+		this['UIButton' + objName].scaleX = 150 / this['UIButton' + objName].width;
+		this['UIButton' + objName].x = (-((this['UIButton' + objName].width/2)-75)) + 50; // The first one will move the sprite witch has a new scale to the original place (x=0,y=0). The second one (+50) will move the sprite
+
+		this['UIButton' + objName].scaleY = this['UIButton' + objName].scaleX;
+		this['UIButton' + objName].y = (-((this['UIButton' + objName].height/2)-75)) + (heigh-160);
+	}
+	else
+	{
+		this['UIButton' + objName].scaleY = 150 / this['UIButton' + objName].height;
+		this['UIButton' + objName].y = (-((this['UIButton' + objName].height/2)-75)) + (heigh-160);
+
+		this['UIButton' + objName].scaleX = this['UIButton' + objName].scaleY;
+		this['UIButton' + objName].x = (-((this['UIButton' + objName].width/2)-75)) + 50;
+	}
+
+	this.addChild(this['UIButton' + objName]);
 
     //this.hiddenObjects.push(this['hiddenObject' + objName]);
 }
@@ -277,8 +332,8 @@ PlayState.clickObject = function (hiddenObj) {
 		this.nextLevelBar.counter.current = this.nextLevelBar.counter.current + 1;
 		this.scoreText.text = this.scoreCount;
 
-		// Increase a little the time (+2)
-		this.timerCount = this.timerCount + 2;
+		// Increase a little the time (+3)
+		this.timerCount = this.timerCount + 3;
 		this.counterText.text =  this.timerCount;
 
 		// Adding again the new objects with new positions
