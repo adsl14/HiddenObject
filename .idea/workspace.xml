@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/UI_btn.png" afterPath="$PROJECT_DIR$/assets/img/Park&amp;City/UI_btn.png" />
+    <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="Mejorado el código y añadido el escenario 2">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/bg/bg.jpg" afterPath="$PROJECT_DIR$/assets/img/Park&amp;City/bg/bg.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/PlayState.js" afterPath="$PROJECT_DIR$/src/States/PlayState.js" />
     </list>
     <ignored path="HiddenObject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,22 +26,12 @@
     <favorites_list name="HiddenObject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="142" column="37" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="37" />
+            <state relative-caret-position="90">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -198,7 +189,8 @@
       <workItem from="1492117606006" duration="13670000" />
       <workItem from="1492135233233" duration="505000" />
       <workItem from="1492135831750" duration="92000" />
-      <workItem from="1492135925869" duration="224000" />
+      <workItem from="1492135925869" duration="552000" />
+      <workItem from="1492375370906" duration="3533000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -284,11 +276,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492135242781</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Mejorado el código y añadido el escenario 2">
+      <created>1492136173760</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1492136173760</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48833000" />
+    <option name="totallyTimeSpent" value="52694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1032" extended-state="0" />
@@ -340,6 +339,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
     <entry file="file://$PROJECT_DIR$/src/game.js" />
@@ -396,8 +403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="142" column="37" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="37" />
+        <state relative-caret-position="90">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
