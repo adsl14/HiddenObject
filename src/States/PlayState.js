@@ -123,7 +123,7 @@ PlayState.create = function () {
     this.scoreCount = 0;
 
     //Add a timer
-    this.counterText = new Kiwi.GameObjects.Textfield(this, "60", width / 2, heigh - 80, "#000", 50, 'normal', 'Arial Black' );
+    this.counterText = new Kiwi.GameObjects.Textfield(this, "120", width / 2, heigh - 80, "#000", 50, 'normal', 'Arial Black' );
     this.addChild( this.counterText );
 
     // You can call the createTimer method on any clock to attach a timer to the clock.
@@ -135,7 +135,7 @@ PlayState.create = function () {
     */
     this.timer = this.game.time.clock.createTimer('tiempo', 1, -1, true);
     this.timer.createTimerEvent( Kiwi.Time.TimerEvent.TIMER_COUNT, this.onTimerCount, this );
-    this.timerCount = 60;
+    this.timerCount = 120;
 
 	//Add a level text
 	if(level == 1)
@@ -236,7 +236,7 @@ PlayState.addObjects = function () {
 
 			//SCALE
 			//this['object' + j].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
-			this['object' + j].transform.scale = (width*0.033917277/177); // The objects will be less large in order to get more images in the screen at the same time
+			this['object' + j].transform.scale = (width*0.024/177); // The objects will be less large in order to get more images in the screen at the same time
 
 			this.addChild(this['object' + j]);
 		}
@@ -260,7 +260,7 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this['hiddenObject' + objName].input.onDown.add(this.clickObject, this);
 
 	//this['hiddenObject' + objName].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
-	this['hiddenObject' + objName].transform.scale = (width*0.033917277/177); // The objects will be less large in order to get more images in the screen at the same time
+	this['hiddenObject' + objName].transform.scale = (width*0.024/177); // The objects will be less large in order to get more images in the screen at the same time
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button

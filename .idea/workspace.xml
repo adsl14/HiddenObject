@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="Mejorado el código y añadido el escenario 2">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/Park&amp;City/bg/bg.jpg" afterPath="$PROJECT_DIR$/assets/img/Park&amp;City/bg/bg.jpg" />
+    <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="Añadido sistema de niveles y las imágenes escalan más pequeñas para albergar un mayor número de ellas">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/PlayState.js" afterPath="$PROJECT_DIR$/src/States/PlayState.js" />
     </list>
@@ -30,7 +29,7 @@
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="-3366">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
@@ -61,7 +60,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="24" />
-    <option name="width" value="1920" />
+    <option name="width" value="1918" />
     <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -190,7 +189,7 @@
       <workItem from="1492135233233" duration="505000" />
       <workItem from="1492135831750" duration="92000" />
       <workItem from="1492135925869" duration="552000" />
-      <workItem from="1492375370906" duration="3533000" />
+      <workItem from="1492375370906" duration="6220000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -283,14 +282,21 @@
       <option name="project" value="LOCAL" />
       <updated>1492136173760</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Añadido sistema de niveles y las imágenes escalan más pequeñas para albergar un mayor número de ellas">
+      <created>1492378940025</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1492378940025</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52694000" />
+    <option name="totallyTimeSpent" value="55381000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1920" height="1032" extended-state="0" />
+    <frame x="0" y="24" width="1918" height="1032" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -332,7 +338,8 @@
     <MESSAGE value="Mejorado el código y añadido el escenario 2 (dificultad normal) n" />
     <MESSAGE value="Mejorado el código y añadido el escenario 2 (dificultad normal)" />
     <MESSAGE value="Mejorado el código y añadido el escenario 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejorado el código y añadido el escenario 2" />
+    <MESSAGE value="Añadido sistema de niveles y las imágenes escalan más pequeñas para albergar un mayor número de ellas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido sistema de niveles y las imágenes escalan más pequeñas para albergar un mayor número de ellas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -403,7 +410,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="-3366">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
