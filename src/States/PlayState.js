@@ -155,7 +155,7 @@ PlayState.create = function () {
 
 
 	// EXP BAR // This bar will be used to determine the next level
-	this.nextLevelBar = new Kiwi.HUD.Widget.Bar ( this.game, 0, 5, 210, heigh - 50, 500, 15 );
+	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 5, 210, heigh - 50, 200, 15 );
 
 	// Change the style of the bar
 	if(level == 1)
@@ -236,7 +236,7 @@ PlayState.addObjects = function () {
 
 			//SCALE
 			//this['object' + j].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
-			this['object' + j].transform.scale = (width*0.024/177); // The objects will be less large in order to get more images in the screen at the same time
+			this['object' + j].transform.scale = (width*0.03/177); // The objects will be less large in order to get more images in the screen at the same time
 
 			this.addChild(this['object' + j]);
 		}
@@ -260,7 +260,7 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this['hiddenObject' + objName].input.onDown.add(this.clickObject, this);
 
 	//this['hiddenObject' + objName].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
-	this['hiddenObject' + objName].transform.scale = (width*0.024/177); // The objects will be less large in order to get more images in the screen at the same time
+	this['hiddenObject' + objName].transform.scale = (width*0.03/177); // The objects will be less large in order to get more images in the screen at the same time
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
