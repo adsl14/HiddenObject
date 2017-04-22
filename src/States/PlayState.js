@@ -3,7 +3,9 @@ var PlayState = new Kiwi.State('PlayState');
 // The level (stage of the game)
 // Park&City --> 1
 // Forest --> 2
-var level = 2;
+// Landscape --> 3
+// Beach --> 4
+var level = 4;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -14,6 +16,11 @@ var heigh = window.innerHeight
 var width = window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
+
+if(width > heigh)
+	var sizeRef = width;
+else
+	var sizeRef = heigh;
 
 if (level == 1)
 {
@@ -26,6 +33,9 @@ if (level == 1)
 
 	// Number of total objects on screen at the beginning (this is the difficulty of the game)
 	var totalObjectsOnscreen = 2;
+
+	// The scale of the objects on to screen
+	var scale = 0.045;
 }
 else if (level == 2)
 {
@@ -33,10 +43,38 @@ else if (level == 2)
     var widthBg = 2000;
 
 	// Number of total images that the game will use
-	var totalObjects = 70;
+	var totalObjects = 90;
+
+	// Number of total objects on screen at the beginning (this is the difficulty of the game)
+	var totalObjectsOnscreen = 6;
+
+	var scale = 0.03;
+}
+else if (level == 3)
+{
+	var heighBg = 1300;
+	var widthBg = 1300;
+
+	// Number of total images that the game will use
+	var totalObjects = 80;
 
 	// Number of total objects on screen at the beginning (this is the difficulty of the game)
 	var totalObjectsOnscreen = 11;
+
+	var scale = 0.045;
+}
+else if (level == 4)
+{
+	var heighBg = 2000;
+	var widthBg = 2000;
+
+	// Number of total images that the game will use
+	var totalObjects = 73;
+
+	// Number of total objects on screen at the beginning (this is the difficulty of the game)
+	var totalObjectsOnscreen = 21;
+
+	var scale = 0.04;
 }
 
 
@@ -83,7 +121,6 @@ PlayState.preload = function () {
 		// Load the main theme
 		this.addAudio('music', './assets/audio/level1.mp3');
 	}
-
     else if(level == 2)
 	{
 		this.addImage('bg', 'assets/img/Forest/bg/bg.jpg');
@@ -99,6 +136,38 @@ PlayState.preload = function () {
 
 		// Load the main theme
 		this.addAudio('music', './assets/audio/level2.mp3');
+	}
+	else if(level == 3)
+	{
+		this.addImage('bg', 'assets/img/Landscape/bg/bg.jpg');
+
+		for(i=1; i<= totalObjects; ++i)
+			this.addImage('hidden_' + [i], 'assets/img/Landscape/svg/hidden_' + [i] + '.svg');
+
+		this.addImage('UI_btn', 'assets/img/Landscape/UI_btn.png');
+
+		// Loading the sound effects
+		this.addAudio('wrong', './assets/audio/wrong.mp3');
+		this.addAudio('correct', './assets/audio/correct.mp3');
+
+		// Load the main theme
+		this.addAudio('music', './assets/audio/level1.mp3');
+	}
+	else if(level == 4)
+	{
+		this.addImage('bg', 'assets/img/Beach/bg/bg.jpg');
+
+		for(i=1; i<= totalObjects; ++i)
+			this.addImage('hidden_' + [i], 'assets/img/Beach/svg/hidden_' + [i] + '.svg');
+
+		this.addImage('UI_btn', 'assets/img/Beach/UI_btn.png');
+
+		// Loading the sound effects
+		this.addAudio('wrong', './assets/audio/wrong.mp3');
+		this.addAudio('correct', './assets/audio/correct.mp3');
+
+		// Load the main theme
+		this.addAudio('music', './assets/audio/level1.mp3');
 	}
 
 };
@@ -142,12 +211,24 @@ PlayState.create = function () {
 	{
 		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 1", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
 		this.level = 1;
-		this.limitLevel = 10;
+		this.limitLevel = 5;
 	}
 	else if(level == 2)
 	{
+		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 5", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
+		this.level = 5;
+		this.limitLevel = 10;
+	}
+	else if(level == 3)
+	{
 		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 10", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
 		this.level = 10;
+		this.limitLevel = 15;
+	}
+	else if(level == 4)
+	{
+		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 15", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
+		this.level = 15;
 		this.limitLevel = 20;
 	}
 
@@ -161,7 +242,11 @@ PlayState.create = function () {
 	if(level == 1)
 		this.nextLevelBar.bar.style.backgroundColor = '#1E90FF';
 	else if (level == 2)
-		this.nextLevelBar.bar.style.backgroundColor = "#ffc31e";
+		this.nextLevelBar.bar.style.backgroundColor = "#5f2302";
+	else if (level == 3)
+		this.nextLevelBar.bar.style.backgroundColor = "#169a22";
+	else if (level == 4)
+		this.nextLevelBar.bar.style.backgroundColor = "#00e4f2";
 
 	// Change the style of the HUD object
 	this.nextLevelBar.style.backgroundColor = '#C0C0C0';
@@ -236,7 +321,7 @@ PlayState.addObjects = function () {
 
 			//SCALE
 			//this['object' + j].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
-			this['object' + j].transform.scale = (width*0.03/177); // The objects will be less large in order to get more images in the screen at the same time
+			this['object' + j].transform.scale = (sizeRef*scale/177); // The objects will be less large in order to get more images in the screen at the same time
 
 			this.addChild(this['object' + j]);
 		}
@@ -260,7 +345,7 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this['hiddenObject' + objName].input.onDown.add(this.clickObject, this);
 
 	//this['hiddenObject' + objName].transform.scale = (width/widthBg) - (heigh/heighBg); // We scale the object to the size of the screen
-	this['hiddenObject' + objName].transform.scale = (width*0.03/177); // The objects will be less large in order to get more images in the screen at the same time
+	this['hiddenObject' + objName].transform.scale = (sizeRef*scale/177); // The objects will be less large in order to get more images in the screen at the same time
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
