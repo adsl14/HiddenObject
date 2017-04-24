@@ -1,4 +1,4 @@
-var PlayState = new Kiwi.State('PlayState');
+﻿var PlayState = new Kiwi.State('PlayState');
 
 // The level (stage of the game)
 // Park&City --> 1
@@ -74,13 +74,19 @@ else if (level == 4)
 	// Number of total objects on screen at the beginning (this is the difficulty of the game)
 	var totalObjectsOnscreen = 21;
 
-	var scale = 0.04;
+	var scale = 0.045;
 }
 
 
-// This values will be used to put the objects on the screen
-var objectPosX = width - 168; // Original --> 168
-var objectPosY = heigh - 500; // Original --> 324
+// This values will be used to put the objects on the screen.
+
+// For the width, the objects only will be moved between maxX and minX
+var maxX = width - 300; // Original --> 168, 300
+var minX = 10;
+
+// For the height, the objects only will be moved between maxY and minY
+var maxY = heigh - 300; // Original --> 324, 500
+var minY = heigh/2-100;
 
 /**
 * The PlayState in the core state that is used in the game.
@@ -187,12 +193,12 @@ PlayState.create = function () {
     this.addChild(this.bg);
 
     //Add a score
-    this.scoreText = new Kiwi.GameObjects.Textfield( this, "0", width - 160, heigh - 80, "#000", 50, 'normal', 'Arial Black' );
+    this.scoreText = new Kiwi.GameObjects.Textfield( this, "0", width - 160, 0, "#000", 50, 'normal', 'Arial Black' );
     this.addChild( this.scoreText );
     this.scoreCount = 0;
 
     //Add a timer
-    this.counterText = new Kiwi.GameObjects.Textfield(this, "120", width / 2, heigh - 80, "#000", 50, 'normal', 'Arial Black' );
+    this.counterText = new Kiwi.GameObjects.Textfield(this, "120", width / 2, 0, "#000", 50, 'normal', 'Arial Black' );
     this.addChild( this.counterText );
 
     // You can call the createTimer method on any clock to attach a timer to the clock.
@@ -204,30 +210,30 @@ PlayState.create = function () {
     */
     this.timer = this.game.time.clock.createTimer('tiempo', 1, -1, true);
     this.timer.createTimerEvent( Kiwi.Time.TimerEvent.TIMER_COUNT, this.onTimerCount, this );
-    this.timerCount = 120;
+    this.timerCount = 180;
 
 	//Add a level text
 	if(level == 1)
 	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 1", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
+		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 1", 170, 0, "#000", 50, 'normal', 'Arial Black' );
 		this.level = 1;
 		this.limitLevel = 5;
 	}
 	else if(level == 2)
 	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 5", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
+		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 5", 170, 0, "#000", 50, 'normal', 'Arial Black' );
 		this.level = 5;
 		this.limitLevel = 10;
 	}
 	else if(level == 3)
 	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 10", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
+		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 10", 170, 0, "#000", 50, 'normal', 'Arial Black' );
 		this.level = 10;
 		this.limitLevel = 15;
 	}
 	else if(level == 4)
 	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 15", 210, heigh - 120, "#000", 50, 'normal', 'Arial Black' );
+		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 15", 170, 0, "#000", 50, 'normal', 'Arial Black' );
 		this.level = 15;
 		this.limitLevel = 20;
 	}
@@ -236,7 +242,7 @@ PlayState.create = function () {
 
 
 	// EXP BAR // This bar will be used to determine the next level
-	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 5, 210, heigh - 50, 200, 15 );
+	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 5, 175, 70, 200, 15 );
 
 	// Change the style of the bar
 	if(level == 1)
@@ -285,7 +291,7 @@ PlayState.addObjects = function () {
 		var Oldopcion = opcion;
 
 		//This will add the real hiddenObject
-		this.addHiddenObject([opcion], Math.random() * objectPosX, Math.random() * objectPosY);
+		this.addHiddenObject([opcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
 
 		// When the player hits the counter.max correct clicks, the difficulty will increase (at the beginning is 5)
 		if(this.nextLevelBar.counter.current == this.nextLevelBar.counter.max)
@@ -315,8 +321,8 @@ PlayState.addObjects = function () {
 			if (this['object' + j])
 				this['object' + j].destroy();
 
-			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * objectPosX, Math.random() * objectPosY);
-			this['object' + j].input.onDown.add(this.clickWrongObject, this);
+			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
+			//this['object' + j].input.onDown.add(this.clickWrongObject, this);
 			this['object' + j].hiddenObjectNumber= Oldopcion;
 
 			//SCALE
@@ -349,7 +355,7 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
-    this['UIBase' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.UI_btn,50,heigh - 160); // 50, heigh - 160
+    this['UIBase' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.UI_btn,10,10); // 50, heigh - 160
     this.addChild(this['UIBase' + objName])
 
     //UI preview image
@@ -359,18 +365,18 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
 	if(this['UIButton' + objName].width > this['UIButton' + objName].height)
 	{
 		this['UIButton' + objName].scaleX = 150 / this['UIButton' + objName].width;
-		this['UIButton' + objName].x = (-((this['UIButton' + objName].width/2)-75)) + 50; // The first one will move the sprite witch has a new scale to the original place (x=0,y=0). The second one (+50) will move the sprite
+		this['UIButton' + objName].x = (-((this['UIButton' + objName].width/2)-75)) + 10; // The first one will move the sprite witch has a new scale to the original place (x=0,y=0). The second one (+50) will move the sprite
 
 		this['UIButton' + objName].scaleY = this['UIButton' + objName].scaleX;
-		this['UIButton' + objName].y = (-((this['UIButton' + objName].height/2)-75)) + (heigh-160);
+		this['UIButton' + objName].y = (-((this['UIButton' + objName].height/2)-75)) + (10); // (heigh - 160)
 	}
 	else
 	{
 		this['UIButton' + objName].scaleY = 150 / this['UIButton' + objName].height;
-		this['UIButton' + objName].y = (-((this['UIButton' + objName].height/2)-75)) + (heigh-160);
+		this['UIButton' + objName].y = (-((this['UIButton' + objName].height/2)-75)) + (10); // (heigh - 160)
 
 		this['UIButton' + objName].scaleX = this['UIButton' + objName].scaleY;
-		this['UIButton' + objName].x = (-((this['UIButton' + objName].width/2)-75)) + 50;
+		this['UIButton' + objName].x = (-((this['UIButton' + objName].width/2)-75)) + 10;
 	}
 
 	this.addChild(this['UIButton' + objName]);
@@ -459,16 +465,16 @@ PlayState.onTimerCount = function () {
 		this.scoreText.destroy();
 
 		if(this.limitLevel != this.level)
-			this.outoftime = new Kiwi.GameObjects.Textfield( this, "¡Nivel no completado!", width/2 - 100, heigh - 200, "#000", 40, 'normal', 'Arial Black' );
+			this.outoftime = new Kiwi.GameObjects.Textfield( this, "¡Nivel no completado!", (width/2), 0, "#000", 40, 'normal', 'Arial Black' );
 		else if(this.timerCount == 0)
-			this.outoftime = new Kiwi.GameObjects.Textfield( this, "¡Se acabó el tiempo!", width/2 - 100, heigh - 200, "#000", 40, 'normal', 'Arial Black' );
+			this.outoftime = new Kiwi.GameObjects.Textfield( this, "¡Se acabó el tiempo!", (width/2), 0, "#000", 40, 'normal', 'Arial Black' );
 		else
-			this.outoftime = new Kiwi.GameObjects.Textfield( this, "¡Nivel completado!", width/2 - 100, heigh - 200, "#000", 40, 'normal', 'Arial Black' );
+			this.outoftime = new Kiwi.GameObjects.Textfield( this, "¡Nivel completado!", (width/2), 0, "#000", 40, 'normal', 'Arial Black' );
 
 		this.addChild( this.outoftime );
 
 		this.finalscore = (this.timerCount*5)+this.scoreCount;
-		this.scoreText = new Kiwi.GameObjects.Textfield( this, "Puntuación final: (" + this.timerCount + " * 5) + " + this.scoreCount + " = " + this.finalscore, width/2 - 100, heigh - 100, "#000", 40, 'normal', 'Arial Black' );
-		this.addChild( this.scoreText );
+		this.addChild( new Kiwi.GameObjects.Textfield( this, "Tiempo: " + this.timerCount + " segundos", (width/2), 40, "#000", 40, 'normal', 'Arial Black' ));
+		this.addChild( new Kiwi.GameObjects.Textfield( this, "Puntuación final: " + this.finalscore + " puntos", width/2, 80, "#000", 40, 'normal', 'Arial Black'));
 	}
 }
