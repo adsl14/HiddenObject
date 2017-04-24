@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/Beach/bg/bg.jpg" afterPath="$PROJECT_DIR$/assets/img/Beach/bg/bg.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/PlayState.js" afterPath="$PROJECT_DIR$/src/States/PlayState.js" />
     </list>
@@ -30,8 +29,8 @@
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="411" column="41" selection-start-line="411" selection-start-column="41" selection-end-line="411" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -72,7 +71,7 @@
       <file leaf-file-name="LoadingState.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="450">
               <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="125" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -238,7 +237,8 @@
       <workItem from="1492375370906" duration="6282000" />
       <workItem from="1492472849707" duration="694000" />
       <workItem from="1492887156563" duration="7947000" />
-      <workItem from="1492985341513" duration="11400000" />
+      <workItem from="1492985341513" duration="11461000" />
+      <workItem from="1493066214908" duration="5844000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -352,11 +352,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492900864680</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Cambiado el algoritmo de posicionamiento de las imágenes. La HUD se encuentra ahora en la posición superior, dejando la zona de juego más accesible">
+      <created>1492997319200</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1492997319200</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75484000" />
+    <option name="totallyTimeSpent" value="81389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1032" extended-state="6" />
@@ -404,7 +411,8 @@
     <MESSAGE value="Añadido sistema de niveles y las imágenes escalan más pequeñas para albergar un mayor número de ellas" />
     <MESSAGE value="Escalados los objetos para que sean más pequeños" />
     <MESSAGE value="Añadidos dos niveles más; Landscape y Beach" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadidos dos niveles más; Landscape y Beach" />
+    <MESSAGE value="Cambiado el algoritmo de posicionamiento de las imágenes. La HUD se encuentra ahora en la posición superior, dejando la zona de juego más accesible" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiado el algoritmo de posicionamiento de las imágenes. La HUD se encuentra ahora en la posición superior, dejando la zona de juego más accesible" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -479,14 +487,16 @@
     <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
     <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js" />
     <entry file="file://$PROJECT_DIR$/src/game.js" />
-    <entry file="file://$PROJECT_DIR$/../../../games4visual/public/js/games/juegoAvion.js">
+    <entry file="file://$PROJECT_DIR$/../../../games4visual/public/js/games/juegoAvion.js" />
+    <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
+    <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22950">
-          <caret line="1278" column="9" selection-start-line="1278" selection-start-column="9" selection-end-line="1278" selection-end-column="9" />
+        <state relative-caret-position="289">
+          <caret line="411" column="41" selection-start-line="411" selection-start-column="41" selection-end-line="411" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/States/PlayState-Park&amp;City.js" />
     <entry file="file://$PROJECT_DIR$/src/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -515,19 +525,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/States/LoadingState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="450">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="125" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/States/PlayState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>

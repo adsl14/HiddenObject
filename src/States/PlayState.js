@@ -198,7 +198,7 @@ PlayState.create = function () {
     this.scoreCount = 0;
 
     //Add a timer
-    this.counterText = new Kiwi.GameObjects.Textfield(this, "120", width / 2, 0, "#000", 50, 'normal', 'Arial Black' );
+    this.counterText = new Kiwi.GameObjects.Textfield(this, "Tiempo: " + 120, 170, 0, "#000", 50, 'normal', 'Arial Black' );
     this.addChild( this.counterText );
 
     // You can call the createTimer method on any clock to attach a timer to the clock.
@@ -210,39 +210,16 @@ PlayState.create = function () {
     */
     this.timer = this.game.time.clock.createTimer('tiempo', 1, -1, true);
     this.timer.createTimerEvent( Kiwi.Time.TimerEvent.TIMER_COUNT, this.onTimerCount, this );
-    this.timerCount = 180;
+    this.timerCount = 120;
 
 	//Add a level text
-	if(level == 1)
-	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 1", 170, 0, "#000", 50, 'normal', 'Arial Black' );
-		this.level = 1;
-		this.limitLevel = 5;
-	}
-	else if(level == 2)
-	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 5", 170, 0, "#000", 50, 'normal', 'Arial Black' );
-		this.level = 5;
-		this.limitLevel = 10;
-	}
-	else if(level == 3)
-	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 10", 170, 0, "#000", 50, 'normal', 'Arial Black' );
-		this.level = 10;
-		this.limitLevel = 15;
-	}
-	else if(level == 4)
-	{
-		this.levelText = new Kiwi.GameObjects.Textfield( this, "Nivel: 15", 170, 0, "#000", 50, 'normal', 'Arial Black' );
-		this.level = 15;
-		this.limitLevel = 20;
-	}
-
+    this.progres = new Kiwi.GameObjects.Textfield( this, "Progreso:", 175, 60, "#000", 50, 'normal', 'Arial Black' );
+    this.addChild(this.progres);
+    this.levelText = new Kiwi.GameObjects.Textfield( this, "0/25", 170, 120, "#000", 30, 'normal', 'Arial Black' );
 	this.addChild( this.levelText );
 
-
 	// EXP BAR // This bar will be used to determine the next level
-	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 5, 175, 70, 200, 15 );
+	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 25, 270, 133, 500, 15 );
 
 	// Change the style of the bar
 	if(level == 1)
@@ -283,7 +260,7 @@ PlayState.create = function () {
 
 PlayState.addObjects = function () {
 
-	if (this.limitLevel != this.level && this.timerCount > 0)
+	if (25 != this.nextLevelBar.counter.current && this.timerCount > 0)
 	{
 		var opcion = Math.floor((Math.random() * totalObjects) + 1);
 
@@ -293,20 +270,12 @@ PlayState.addObjects = function () {
 		//This will add the real hiddenObject
 		this.addHiddenObject([opcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
 
-		// When the player hits the counter.max correct clicks, the difficulty will increase (at the beginning is 5)
-		if(this.nextLevelBar.counter.current == this.nextLevelBar.counter.max)
-		{
+		// When the player hits the 5, 10 or 15 correct clicks, the difficulty will increase
+		if(this.nextLevelBar.counter.current%5 == 0 && this.nextLevelBar.counter.current != 0)
 			totalObjectsOnscreen = totalObjectsOnscreen + 1; // Increase level
-
-			// Updating the text "Level: X"
-			this.level = this.level + 1;
-			this.levelText.text = "Nivel: " + this.level;
-
-			this.nextLevelBar.counter.current = 0; // Set 0 the bar of progress
 
 			// Now each increase will be the same (would be very boring in high levels i think, so i comment this line)
 			//this.nextLevelBar.counter.max = this.nextLevelBar.counter.max + 1; // The max bar of progress increases. This imitate the exp system. When you reach the next level, you'll need more exp to reach the next level.
-		}
 
 		//This 'for' will add all the objects excepts the hidden one
 		for (j = 1; j <= totalObjectsOnscreen-1; ++j)
@@ -386,7 +355,7 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
 
 PlayState.clickWrongObject = function (object) {
 
-	if(this.limitLevel != this.level && this.timerCount > 0)
+	if(25 != this.nextLevelBar.counter.current && this.timerCount > 0)
 	{
 		// We play the 'wrong' audio
 		this.wrong.play();
@@ -420,7 +389,7 @@ PlayState.clickWrongObject = function (object) {
 */
 PlayState.clickObject = function (hiddenObj) {
 
-	if (this.limitLevel != this.level && this.timerCount > 0)
+	if (25 != this.nextLevelBar.counter.current && this.timerCount > 0)
 	{
 		// We play the correct audio
 		this.correct.play();
@@ -432,12 +401,17 @@ PlayState.clickObject = function (hiddenObj) {
 
 		// Add score
 		this.scoreCount = this.scoreCount + 10;
-		this.nextLevelBar.counter.current = this.nextLevelBar.counter.current + 1;
-		this.scoreText.text = this.scoreCount;
+        this.scoreText.text = this.scoreCount;
 
-		// Increase a little the time (+3)
-		this.timerCount = this.timerCount + 3;
-		this.counterText.text =  this.timerCount;
+        // Updating bar
+        this.nextLevelBar.counter.current = this.nextLevelBar.counter.current + 1;
+
+        // Updating the text "0/25"
+        this.levelText.text = this.nextLevelBar.counter.current + "/25";
+
+		// Increase a little the time (+2)
+		this.timerCount = this.timerCount + 2;
+		this.counterText.text =  "Tiempo: " + this.timerCount;
 
 		// Adding again the new objects with new positions
 		this.addObjects();
@@ -454,13 +428,16 @@ PlayState.clickObject = function (hiddenObj) {
 PlayState.onTimerCount = function () {
 
 	// We will stop the game when the player finish it
-	if (this.limitLevel != this.level && this.timerCount != 0)
+	if (25 != this.nextLevelBar.counter.current && this.timerCount != 0)
 	{
 		this.timerCount = this.timerCount - 1;
-		this.counterText.text =  this.timerCount;
+		this.counterText.text =  "Tiempo: " + this.timerCount;
 	}
 	else
 	{
+	    this.levelText.destroy();
+	    this.progres.destroy();
+        this.game.huds.hideHUD();
 		this.counterText.destroy();
 		this.scoreText.destroy();
 
