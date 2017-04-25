@@ -5,7 +5,8 @@
 // Forest --> 2
 // Landscape --> 3
 // Beach --> 4
-var level = 4;
+// Ocean --> 5
+var level = 5;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -46,7 +47,7 @@ else if (level == 2)
 	var totalObjects = 90;
 
 	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 6;
+	var totalObjectsOnscreen = 12;
 
 	var scale = 0.03;
 }
@@ -59,7 +60,7 @@ else if (level == 3)
 	var totalObjects = 80;
 
 	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 11;
+	var totalObjectsOnscreen = 22;
 
 	var scale = 0.045;
 }
@@ -72,9 +73,22 @@ else if (level == 4)
 	var totalObjects = 73;
 
 	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 21;
+	var totalObjectsOnscreen = 32;
 
 	var scale = 0.045;
+}
+else
+{
+	var heighBg = 1300;
+	var widthBg = 1300;
+
+	// Number of total images that the game will use
+	var totalObjects = 90;
+
+	// Number of total objects on screen at the beginning (this is the difficulty of the game)
+	var totalObjectsOnscreen = 42;
+
+	var scale = 0.03;
 }
 
 
@@ -175,6 +189,22 @@ PlayState.preload = function () {
 		// Load the main theme
 		this.addAudio('music', './assets/audio/level1.mp3');
 	}
+	else
+	{
+		this.addImage('bg', 'assets/img/Ocean/bg/bg.jpg');
+
+		for(i=1; i<= totalObjects; ++i)
+			this.addImage('hidden_' + [i], 'assets/img/Ocean/svg/hidden_' + [i] + '.svg');
+
+		this.addImage('UI_btn', 'assets/img/Ocean/UI_btn.png');
+
+		// Loading the sound effects
+		this.addAudio('wrong', './assets/audio/wrong.mp3');
+		this.addAudio('correct', './assets/audio/correct.mp3');
+
+		// Load the main theme
+		this.addAudio('music', './assets/audio/level1.mp3');
+	}
 
 };
 
@@ -230,7 +260,8 @@ PlayState.create = function () {
 		this.nextLevelBar.bar.style.backgroundColor = "#169a22";
 	else if (level == 4)
 		this.nextLevelBar.bar.style.backgroundColor = "#00e4f2";
-
+	else
+		this.nextLevelBar.bar.style.backgroundColor = "#043ee5";
 	// Change the style of the HUD object
 	this.nextLevelBar.style.backgroundColor = '#C0C0C0';
 	this.nextLevelBar.style.boxShadow = '5px 5px 10px #000';
@@ -271,8 +302,8 @@ PlayState.addObjects = function () {
 		this.addHiddenObject([opcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
 
 		// When the player hits the 5, 10 or 15 correct clicks, the difficulty will increase
-		if(this.nextLevelBar.counter.current%5 == 0 && this.nextLevelBar.counter.current != 0)
-			totalObjectsOnscreen = totalObjectsOnscreen + 1; // Increase level
+		if(this.nextLevelBar.counter.current%6 == 0 && this.nextLevelBar.counter.current != 0)
+			totalObjectsOnscreen = totalObjectsOnscreen + 2; // Increase level
 
 			// Now each increase will be the same (would be very boring in high levels i think, so i comment this line)
 			//this.nextLevelBar.counter.max = this.nextLevelBar.counter.max + 1; // The max bar of progress increases. This imitate the exp system. When you reach the next level, you'll need more exp to reach the next level.
