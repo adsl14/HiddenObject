@@ -139,7 +139,7 @@ PlayState.preload = function () {
 		this.addAudio('correct', './assets/audio/correct.mp3');
 
 		// Load the main theme
-		this.addAudio('music', './assets/audio/level1.mp3');
+		this.addAudio('music', './assets/audio/music.mp3');
 	}
     else if(level == 2)
 	{
@@ -155,7 +155,7 @@ PlayState.preload = function () {
 		this.addAudio('correct', './assets/audio/correct.mp3');
 
 		// Load the main theme
-		this.addAudio('music', './assets/audio/level2.mp3');
+		this.addAudio('music', './assets/audio/music.mp3');
 	}
 	else if(level == 3)
 	{
@@ -171,7 +171,7 @@ PlayState.preload = function () {
 		this.addAudio('correct', './assets/audio/correct.mp3');
 
 		// Load the main theme
-		this.addAudio('music', './assets/audio/level1.mp3');
+		this.addAudio('music', './assets/audio/music.mp3');
 	}
 	else if(level == 4)
 	{
@@ -187,7 +187,7 @@ PlayState.preload = function () {
 		this.addAudio('correct', './assets/audio/correct.mp3');
 
 		// Load the main theme
-		this.addAudio('music', './assets/audio/level1.mp3');
+		this.addAudio('music', './assets/audio/music.mp3');
 	}
 	else
 	{
@@ -203,7 +203,7 @@ PlayState.preload = function () {
 		this.addAudio('correct', './assets/audio/correct.mp3');
 
 		// Load the main theme
-		this.addAudio('music', './assets/audio/level1.mp3');
+		this.addAudio('music', './assets/audio/music.mp3');
 	}
 
 };
