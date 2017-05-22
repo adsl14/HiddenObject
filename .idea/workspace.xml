@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/loading/html5-splash_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/loading/kiwi-js.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/loading/kiwi-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/loading/loading-bar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/loading/made-with.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/loading/radial.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/States/IntroState.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/States/LoadingState.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/States/PlayState.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PlayState.js" afterPath="$PROJECT_DIR$/src/PlayState.js" />
     </list>
     <ignored path="HiddenObject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +41,8 @@
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8802">
-              <caret line="489" column="1" selection-start-line="489" selection-start-column="1" selection-end-line="489" selection-end-column="1" />
+            <state relative-caret-position="3003">
+              <caret line="493" column="1" selection-start-line="493" selection-start-column="1" selection-end-line="493" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -222,7 +212,7 @@
       <workItem from="1494364761547" duration="3587000" />
       <workItem from="1494530305881" duration="3630000" />
       <workItem from="1495385789318" duration="2471000" />
-      <workItem from="1495476967809" duration="5153000" />
+      <workItem from="1495476967809" duration="5517000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -364,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495387009137</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Eliminada la pantalla de carga. Ahora solo hay un .js">
+      <created>1495483452067</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1495483452067</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100280000" />
+    <option name="totallyTimeSpent" value="100644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1031" extended-state="0" />
@@ -420,7 +417,8 @@
     <MESSAGE value="Cambiado el sistema de niveles por escenario. Ahora la barra no se rellenará por completo hasta que el nivel haya completado." />
     <MESSAGE value="Añadido quinto y último nivel" />
     <MESSAGE value="Cambiada la música de fondo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiada la música de fondo" />
+    <MESSAGE value="Eliminada la pantalla de carga. Ahora solo hay un .js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminada la pantalla de carga. Ahora solo hay un .js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -567,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8802">
-          <caret line="489" column="1" selection-start-line="489" selection-start-column="1" selection-end-line="489" selection-end-column="1" />
+        <state relative-caret-position="3003">
+          <caret line="493" column="1" selection-start-line="493" selection-start-column="1" selection-end-line="493" selection-end-column="1" />
           <folding />
         </state>
       </provider>

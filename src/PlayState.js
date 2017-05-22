@@ -1,12 +1,14 @@
 ﻿var PlayState = new Kiwi.State('PlayState');
 
+// GLOBAL VARS
+
 // The level (stage of the game)
 // Park&City --> 1
 // Forest --> 2
 // Landscape --> 3
 // Beach --> 4
 // Ocean --> 5
-var level = 1;
+var level = 2;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -324,6 +326,8 @@ PlayState.addObjects = function () {
 				this['object' + j].destroy();
 
 			this['object' + j] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + opcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
+
+			// UNCOMMENT THIS IF YOU WANT TO PENALIZE!!!
 			//this['object' + j].input.onDown.add(this.clickWrongObject, this);
 			this['object' + j].hiddenObjectNumber= Oldopcion;
 
