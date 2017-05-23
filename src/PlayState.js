@@ -8,22 +8,37 @@
 // Landscape --> 3
 // Beach --> 4
 // Ocean --> 5
-var level = 2;
+var level = 5;
 
 // Height of the background (display)
 var heigh = window.innerHeight
     || document.documentElement.clientHeight
     || document.body.clientHeight;
+var auxHeigh;
 
 // Width of the background (display)
 var width = window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
+var auxWidth;
 
 if(width > heigh)
 	var sizeRef = width;
 else
 	var sizeRef = heigh;
+
+// BACKGROUND
+var bg;
+
+// This values will be used to put the objects on the screen.
+
+// For the width, the objects only will be moved between maxX and minX
+var maxX = width - 300; // Original --> 168, 300
+var minX = 10;
+
+// For the height, the objects only will be moved between maxY and minY
+var maxY = heigh - 300; // Original --> 324, 500
+var minY = heigh/2-100;
 
 if (level == 1)
 {
@@ -94,16 +109,6 @@ else
 }
 
 
-// This values will be used to put the objects on the screen.
-
-// For the width, the objects only will be moved between maxX and minX
-var maxX = width - 300; // Original --> 168, 300
-var minX = 10;
-
-// For the height, the objects only will be moved between maxY and minY
-var maxY = heigh - 300; // Original --> 324, 500
-var minY = heigh/2-100;
-
 /**
 * The PlayState in the core state that is used in the game.
 *
@@ -123,11 +128,15 @@ var minY = heigh/2-100;
 */
 PlayState.preload = function () {
 
-    this.game.stage.resize(width,heigh);
 
-    //Make sure to call the super at the top.
-    //Otherwise the loading graphics will load last, and that defies the whole point in loading them.
-    KiwiLoadingScreen.prototype.preload.call(this);
+	//Make sure to call the super at the top.
+	//Otherwise the loading graphics will load last, and that defies the whole point in loading them.
+	KiwiLoadingScreen.prototype.preload.call(this);
+
+	auxWidth = width;
+	auxHeigh = heigh;
+
+    this.game.stage.resize(width,heigh);
 
     if(level == 1)
 	{
@@ -221,10 +230,10 @@ PlayState.preload = function () {
 PlayState.create = function () {
 
     //Add bg
-    this.bg = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.bg, (width/2)-(widthBg/2), (heigh/2)-(heighBg/2));
-	this.bg.scaleY = heigh/heighBg;
-	this.bg.scaleX = width/widthBg;
-    this.addChild(this.bg);
+    bg = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.bg, (width/2)-(widthBg/2), (heigh/2)-(heighBg/2));
+	bg.scaleY = heigh/heighBg;
+	bg.scaleX = width/widthBg;
+    this.addChild(bg);
 
     //Add a score
     this.scoreText = new Kiwi.GameObjects.Textfield( this, "0", width - 160, 0, "#000", 50, 'normal', 'Arial Black' );
@@ -493,18 +502,79 @@ PlayState.onTimerCount = function () {
 	}
 }
 
+/**
+ * This method verify the size of the screen every time and fix it
+ *
+ * @method update
+ * @public
+ */
+PlayState.update = function ()
+{
+	Kiwi.State.prototype.update.call(this);
+
+	// Height of the background (display)
+	var heigh = window.innerHeight
+		|| document.documentElement.clientHeight
+		|| document.body.clientHeight;
+
+		// Width of the background (display)
+	var width = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+
+	// We will verify if the screen has changed and then, we will fix all the images
+	if(auxHeigh != heigh && auxWidth != width)
+	{
+		// This values will be used to put the objects on the screen.
+		// For the width, the objects only will be moved between maxX and minX
+		var auxMaxX = maxX;
+		maxX = width - 300; // Original --> 168, 300
+		minX = 10;
+
+		// For the height, the objects only will be moved between maxY and minY
+		var auxMaxY = maxY;
+		var auxMinY = minY;
+		maxY = heigh - 300; // Original --> 324, 500
+		minY = heigh/2-100;
+
+		this.scoreText.transform.x = width - 160;
+
+		// This will scale the objects to the new size of the screen
+		if(width > heigh)
+			sizeRef = width;
+		else
+			sizeRef = heigh;
+
+		// This will scale and move the object to the new screen which has a new size
+		for (j = 1; j <= totalObjectsOnscreen-1; ++j)
+		{
+			// First, we get the random pos of each image, and then we will do the exact thing before; get a new position for the images
+			this['object' + j].transform.x = (this['object' + j].transform.x/(((auxMaxX)-minX)+minX)) * ((maxX-minX)+minX);
+			this['object' + j].transform.y = (this['object' + j].transform.y/(((auxMaxY)-auxMinY)+auxMinY)) * ((maxY-minY)+minY);
+			this['object' + j].transform.scale = (sizeRef*scale/177);
+		}
+
+		this['hiddenObject' + this['object' + 1].hiddenObjectNumber].transform.y = (this['hiddenObject' + this['object' + 1].hiddenObjectNumber].transform.y/(((auxMaxY)-auxMinY)+auxMinY)) * ((maxY-minY)+minY);
+		this['hiddenObject' + this['object' + 1].hiddenObjectNumber].transform.x = (this['hiddenObject' + this['object' + 1].hiddenObjectNumber].transform.x/(((auxMaxX)-minX)+minX)) * ((maxX-minX)+minX);
+		this['hiddenObject' + this['object' + 1].hiddenObjectNumber].transform.scale = (sizeRef*scale/177);
 
 
+		// We update our aux height and width
+		auxHeigh = heigh;
+		auxWidth = width;
+
+		// We scale the game screen
+		this.game.stage.resize(width,heigh);
+
+		//We scale the background with the new size of the screen
+		bg.transform.x = (width/2)-(widthBg/2);
+		bg.transform.y = (heigh/2)-(heighBg/2);
+		bg.transform.scaleX = width/widthBg;
+		bg.transform.scaleY = heigh/heighBg;
 
 
-
-
-
-
-
-
-
-
+	}
+}
 
 var myGame = new Kiwi.Game('content', 'HiddenObjectBlueprint', null, { renderer: Kiwi.RENDERER_CANVAS });
 
