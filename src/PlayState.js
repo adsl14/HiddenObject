@@ -523,7 +523,7 @@ PlayState.update = function ()
 		|| document.body.clientWidth;
 
 	// We will verify if the screen has changed and then, we will fix all the images
-	if(auxHeigh != heigh && auxWidth != width)
+	if(auxHeigh != heigh || auxWidth != width)
 	{
 		// This values will be used to put the objects on the screen.
 		// For the width, the objects only will be moved between maxX and minX
@@ -571,8 +571,6 @@ PlayState.update = function ()
 		bg.transform.y = (heigh/2)-(heighBg/2);
 		bg.transform.scaleX = width/widthBg;
 		bg.transform.scaleY = heigh/heighBg;
-
-
 	}
 }
 
