@@ -41,8 +41,8 @@
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="525" column="45" selection-start-line="525" selection-start-column="45" selection-end-line="525" selection-end-column="45" />
+            <state relative-caret-position="180">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -217,7 +217,10 @@
       <workItem from="1495489409270" duration="2470000" />
       <workItem from="1495563388277" duration="7099000" />
       <workItem from="1495575825868" duration="5484000" />
-      <workItem from="1495581559217" duration="2228000" />
+      <workItem from="1495581559217" duration="3717000" />
+      <workItem from="1495644706748" duration="1848000" />
+      <workItem from="1496007574532" duration="627000" />
+      <workItem from="1497648458105" duration="19686000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -380,11 +383,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495583466882</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Corregido pequeño error al detectar el cambio de tamaño de pantalla">
+      <created>1495584373873</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1495584373873</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118013000" />
+    <option name="totallyTimeSpent" value="141663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1032" extended-state="6" />
@@ -396,9 +406,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1" y="391" width="1918" height="307" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -439,7 +449,8 @@
     <MESSAGE value="Eliminada la pantalla de carga. Ahora solo hay un .js" />
     <MESSAGE value="añadido algunos comentarios" />
     <MESSAGE value="Ahora el juego escala los objetos y background cada vez que se cambia el tamaño de pantalla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ahora el juego escala los objetos y background cada vez que se cambia el tamaño de pantalla" />
+    <MESSAGE value="Corregido pequeño error al detectar el cambio de tamaño de pantalla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corregido pequeño error al detectar el cambio de tamaño de pantalla" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -522,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="525" column="45" selection-start-line="525" selection-start-column="45" selection-end-line="525" selection-end-column="45" />
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>

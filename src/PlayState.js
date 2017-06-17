@@ -8,7 +8,7 @@
 // Landscape --> 3
 // Beach --> 4
 // Ocean --> 5
-var level = 5;
+var level = 3;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -108,7 +108,6 @@ else
 	var scale = 0.03;
 }
 
-
 /**
 * The PlayState in the core state that is used in the game.
 *
@@ -127,7 +126,6 @@ else
 * @private
 */
 PlayState.preload = function () {
-
 
 	//Make sure to call the super at the top.
 	//Otherwise the loading graphics will load last, and that defies the whole point in loading them.
@@ -311,15 +309,12 @@ PlayState.addObjects = function () {
 		//This will be used to know the preview option
 		var Oldopcion = opcion;
 
-		//This will add the real hiddenObject
-		this.addHiddenObject([opcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
-
 		// When the player hits the 5, 10 or 15 correct clicks, the difficulty will increase
 		if(this.nextLevelBar.counter.current%6 == 0 && this.nextLevelBar.counter.current != 0)
 			totalObjectsOnscreen = totalObjectsOnscreen + 2; // Increase level
 
-			// Now each increase will be the same (would be very boring in high levels i think, so i comment this line)
-			//this.nextLevelBar.counter.max = this.nextLevelBar.counter.max + 1; // The max bar of progress increases. This imitate the exp system. When you reach the next level, you'll need more exp to reach the next level.
+		// Now each increase will be the same (would be very boring in high levels i think, so i comment this line)
+		//this.nextLevelBar.counter.max = this.nextLevelBar.counter.max + 1; // The max bar of progress increases. This imitate the exp system. When you reach the next level, you'll need more exp to reach the next level.
 
 		//This 'for' will add all the objects excepts the hidden one
 		for (j = 1; j <= totalObjectsOnscreen-1; ++j)
@@ -346,6 +341,9 @@ PlayState.addObjects = function () {
 
 			this.addChild(this['object' + j]);
 		}
+
+		//This will add the real hiddenObject
+		this.addHiddenObject([Oldopcion], Math.random() * (maxX - minX) + minX, Math.random() * (maxY - minY) + minY);
 	}
 }
 
