@@ -8,7 +8,7 @@
 // Landscape --> 3
 // Beach --> 4
 // Ocean --> 5
-var level = 3;
+var level = 5;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -40,73 +40,90 @@ var minX = 10;
 var maxY = heigh - 300; // Original --> 324, 500
 var minY = heigh/2-100;
 
-if (level == 1)
+switch(level)
 {
-	// Size of the original image (bg.jpg)
-    var heighBg = 1200;
-    var widthBg = 1200;
+	case 1:
 
-	// Number of total images that the game will use
-	var totalObjects = 29;
+		// Size of the original image (bg.jpg)
+		var heighBg = 1200;
+		var widthBg = 1200;
 
-	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 2;
+		// Number of total images that the game will use
+		var totalObjects = 29;
 
-	// The scale of the objects on to screen
-	var scale = 0.045;
+		// Number of total objects on screen at the beginning (this is the difficulty of the game)
+		var totalObjectsOnscreen = 2;
+
+		// The scale of the objects on to screen
+		var scale = 0.045;
+
+		break;
+
+	case 2:
+
+		// Size of the original image (bg.jpg)
+		var heighBg = 2000;
+		var widthBg = 2000;
+
+		// Number of total images that the game will use
+		var totalObjects = 90;
+
+		// Number of total objects on screen at the beginning (this is the difficulty of the game)
+		var totalObjectsOnscreen = 12;
+
+		var scale = 0.03;
+
+		break;
+
+	case 3:
+
+		// Size of the original image (bg.jpg)
+		var heighBg = 1300;
+		var widthBg = 1300;
+
+		// Number of total images that the game will use
+		var totalObjects = 80;
+
+		// Number of total objects on screen at the beginning (this is the difficulty of the game)
+		var totalObjectsOnscreen = 22;
+
+		var scale = 0.045;
+
+		break;
+
+	case 4:
+
+		// Size of the original image (bg.jpg)
+		var heighBg = 2000;
+		var widthBg = 2000;
+
+		// Number of total images that the game will use
+		var totalObjects = 73;
+
+		// Number of total objects on screen at the beginning (this is the difficulty of the game)
+		var totalObjectsOnscreen = 32;
+
+		var scale = 0.045;
+
+		break;
+
+	case 5:
+
+		// Size of the original image (bg.jpg)
+		var heighBg = 1300;
+		var widthBg = 1300;
+
+		// Number of total images that the game will use
+		var totalObjects = 90;
+
+		// Number of total objects on screen at the beginning (this is the difficulty of the game)
+		var totalObjectsOnscreen = 42;
+
+		var scale = 0.03;
+
+		break;
 }
-else if (level == 2)
-{
-    var heighBg = 2000;
-    var widthBg = 2000;
 
-	// Number of total images that the game will use
-	var totalObjects = 90;
-
-	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 12;
-
-	var scale = 0.03;
-}
-else if (level == 3)
-{
-	var heighBg = 1300;
-	var widthBg = 1300;
-
-	// Number of total images that the game will use
-	var totalObjects = 80;
-
-	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 22;
-
-	var scale = 0.045;
-}
-else if (level == 4)
-{
-	var heighBg = 2000;
-	var widthBg = 2000;
-
-	// Number of total images that the game will use
-	var totalObjects = 73;
-
-	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 32;
-
-	var scale = 0.045;
-}
-else
-{
-	var heighBg = 1300;
-	var widthBg = 1300;
-
-	// Number of total images that the game will use
-	var totalObjects = 90;
-
-	// Number of total objects on screen at the beginning (this is the difficulty of the game)
-	var totalObjectsOnscreen = 42;
-
-	var scale = 0.03;
-}
 
 /**
 * The PlayState in the core state that is used in the game.
@@ -136,88 +153,100 @@ PlayState.preload = function () {
 
     this.game.stage.resize(width,heigh);
 
-    if(level == 1)
+	switch (level)
 	{
-		this.addImage('bg', 'assets/img/Park&City/bg/bg.jpg');
+		case 1:
 
-		for(i=1; i<= totalObjects; ++i)
-			this.addImage('hidden_' + [i], 'assets/img/Park&City/svg/hidden_' + [i] + '.svg');
+			this.addImage('bg', 'assets/img/Park&City/bg/bg.jpg');
 
-		this.addImage('UI_btn', 'assets/img/Park&City/UI_btn.png');
+			for(i=1; i<= totalObjects; ++i)
+				this.addImage('hidden_' + [i], 'assets/img/Park&City/svg/hidden_' + [i] + '.svg');
 
-		// Loading the sound effects
-		this.addAudio('wrong', './assets/audio/wrong.mp3');
-		this.addAudio('correct', './assets/audio/correct.mp3');
+			this.addImage('UI_btn', 'assets/img/Park&City/UI_btn.png');
 
-		// Load the main theme
-		this.addAudio('music', './assets/audio/music.mp3');
+			// Loading the sound effects
+			this.addAudio('wrong', './assets/audio/wrong.mp3');
+			this.addAudio('correct', './assets/audio/correct.mp3');
+
+			// Load the main theme
+			this.addAudio('music', './assets/audio/music.mp3');
+
+			break;
+
+		case 2:
+
+			this.addImage('bg', 'assets/img/Forest/bg/bg.jpg');
+
+			for(i=1; i<= totalObjects; ++i)
+				this.addImage('hidden_' + [i], 'assets/img/Forest/svg/hidden_' + [i] + '.svg');
+
+			this.addImage('UI_btn', 'assets/img/Forest/UI_btn.png');
+
+			// Loading the sound effects
+			this.addAudio('wrong', './assets/audio/wrong.mp3');
+			this.addAudio('correct', './assets/audio/correct.mp3');
+
+			// Load the main theme
+			this.addAudio('music', './assets/audio/music.mp3');
+
+			break;
+
+		case 3:
+
+			this.addImage('bg', 'assets/img/Landscape/bg/bg.jpg');
+
+			for(i=1; i<= totalObjects; ++i)
+				this.addImage('hidden_' + [i], 'assets/img/Landscape/svg/hidden_' + [i] + '.svg');
+
+			this.addImage('UI_btn', 'assets/img/Landscape/UI_btn.png');
+
+			// Loading the sound effects
+			this.addAudio('wrong', './assets/audio/wrong.mp3');
+			this.addAudio('correct', './assets/audio/correct.mp3');
+
+			// Load the main theme
+			this.addAudio('music', './assets/audio/music.mp3');
+
+			break;
+
+		case 4:
+
+			this.addImage('bg', 'assets/img/Beach/bg/bg.jpg');
+
+			for(i=1; i<= totalObjects; ++i)
+				this.addImage('hidden_' + [i], 'assets/img/Beach/svg/hidden_' + [i] + '.svg');
+
+			this.addImage('UI_btn', 'assets/img/Beach/UI_btn.png');
+
+			// Loading the sound effects
+			this.addAudio('wrong', './assets/audio/wrong.mp3');
+			this.addAudio('correct', './assets/audio/correct.mp3');
+
+			// Load the main theme
+			this.addAudio('music', './assets/audio/music.mp3');
+
+			break;
+
+		case 5:
+
+			this.addImage('bg', 'assets/img/Ocean/bg/bg.jpg');
+
+			for(i=1; i<= totalObjects; ++i)
+				this.addImage('hidden_' + [i], 'assets/img/Ocean/svg/hidden_' + [i] + '.svg');
+
+			this.addImage('UI_btn', 'assets/img/Ocean/UI_btn.png');
+
+			// Loading the sound effects
+			this.addAudio('wrong', './assets/audio/wrong.mp3');
+			this.addAudio('correct', './assets/audio/correct.mp3');
+
+			// Load the main theme
+			this.addAudio('music', './assets/audio/music.mp3');
+
+			break;
 	}
-    else if(level == 2)
-	{
-		this.addImage('bg', 'assets/img/Forest/bg/bg.jpg');
 
-		for(i=1; i<= totalObjects; ++i)
-			this.addImage('hidden_' + [i], 'assets/img/Forest/svg/hidden_' + [i] + '.svg');
-
-		this.addImage('UI_btn', 'assets/img/Forest/UI_btn.png');
-
-		// Loading the sound effects
-		this.addAudio('wrong', './assets/audio/wrong.mp3');
-		this.addAudio('correct', './assets/audio/correct.mp3');
-
-		// Load the main theme
-		this.addAudio('music', './assets/audio/music.mp3');
-	}
-	else if(level == 3)
-	{
-		this.addImage('bg', 'assets/img/Landscape/bg/bg.jpg');
-
-		for(i=1; i<= totalObjects; ++i)
-			this.addImage('hidden_' + [i], 'assets/img/Landscape/svg/hidden_' + [i] + '.svg');
-
-		this.addImage('UI_btn', 'assets/img/Landscape/UI_btn.png');
-
-		// Loading the sound effects
-		this.addAudio('wrong', './assets/audio/wrong.mp3');
-		this.addAudio('correct', './assets/audio/correct.mp3');
-
-		// Load the main theme
-		this.addAudio('music', './assets/audio/music.mp3');
-	}
-	else if(level == 4)
-	{
-		this.addImage('bg', 'assets/img/Beach/bg/bg.jpg');
-
-		for(i=1; i<= totalObjects; ++i)
-			this.addImage('hidden_' + [i], 'assets/img/Beach/svg/hidden_' + [i] + '.svg');
-
-		this.addImage('UI_btn', 'assets/img/Beach/UI_btn.png');
-
-		// Loading the sound effects
-		this.addAudio('wrong', './assets/audio/wrong.mp3');
-		this.addAudio('correct', './assets/audio/correct.mp3');
-
-		// Load the main theme
-		this.addAudio('music', './assets/audio/music.mp3');
-	}
-	else
-	{
-		this.addImage('bg', 'assets/img/Ocean/bg/bg.jpg');
-
-		for(i=1; i<= totalObjects; ++i)
-			this.addImage('hidden_' + [i], 'assets/img/Ocean/svg/hidden_' + [i] + '.svg');
-
-		this.addImage('UI_btn', 'assets/img/Ocean/UI_btn.png');
-
-		// Loading the sound effects
-		this.addAudio('wrong', './assets/audio/wrong.mp3');
-		this.addAudio('correct', './assets/audio/correct.mp3');
-
-		// Load the main theme
-		this.addAudio('music', './assets/audio/music.mp3');
-	}
-
-};
+}
 
 /**
 * Since we have loaded all the graphics in the LoadingState, the we can skip adding in a preload method to this state and just  start at the create.
@@ -263,16 +292,39 @@ PlayState.create = function () {
 	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 25, 270, 133, 500, 15 );
 
 	// Change the style of the bar
-	if(level == 1)
-		this.nextLevelBar.bar.style.backgroundColor = '#1E90FF';
-	else if (level == 2)
-		this.nextLevelBar.bar.style.backgroundColor = "#5f2302";
-	else if (level == 3)
-		this.nextLevelBar.bar.style.backgroundColor = "#169a22";
-	else if (level == 4)
-		this.nextLevelBar.bar.style.backgroundColor = "#00e4f2";
-	else
-		this.nextLevelBar.bar.style.backgroundColor = "#043ee5";
+	switch (level)
+	{
+		case 1:
+
+			this.nextLevelBar.bar.style.backgroundColor = '#1E90FF';
+
+			break;
+
+		case 2:
+
+			this.nextLevelBar.bar.style.backgroundColor = "#5f2302";
+
+			break;
+
+		case 3:
+
+			this.nextLevelBar.bar.style.backgroundColor = "#169a22";
+
+			break;
+
+		case 4:
+
+			this.nextLevelBar.bar.style.backgroundColor = "#00e4f2";
+
+			break;
+
+		case 5:
+
+			this.nextLevelBar.bar.style.backgroundColor = "#043ee5";
+
+			break;
+	}
+
 	// Change the style of the HUD object
 	this.nextLevelBar.style.backgroundColor = '#C0C0C0';
 	this.nextLevelBar.style.boxShadow = '5px 5px 10px #000';
