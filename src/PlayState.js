@@ -1,4 +1,8 @@
-﻿var PlayState = new Kiwi.State('PlayState');
+﻿var myGame = new Kiwi.Game('content', 'HiddenObjectBlueprint', null, { renderer: Kiwi.RENDERER_CANVAS });
+var PlayState = new Kiwi.State("PlayState");
+
+myGame.states.addState(PlayState);
+myGame.states.switchState("PlayState");
 
 // GLOBAL VARS
 
@@ -8,7 +12,7 @@
 // Landscape --> 3
 // Beach --> 4
 // Ocean --> 5
-var level = 5;
+var level = 1;
 
 // Height of the background (display)
 var heigh = window.innerHeight
@@ -148,10 +152,19 @@ PlayState.preload = function () {
 	//Otherwise the loading graphics will load last, and that defies the whole point in loading them.
 	KiwiLoadingScreen.prototype.preload.call(this);
 
+    this.logo = new Kiwi.GameObjects.StaticImage(this, this.textures[ "loadingImage" ], 150, 50 );
+
 	auxWidth = width;
 	auxHeigh = heigh;
 
     this.game.stage.resize(width,heigh);
+
+    // Loading the sound effects
+    this.addAudio('wrong', './assets/audio/wrong.mp3');
+    this.addAudio('correct', './assets/audio/correct.mp3');
+
+    // Load the main theme
+    this.addAudio('music', './assets/audio/music.mp3');
 
 	switch (level)
 	{
@@ -164,13 +177,6 @@ PlayState.preload = function () {
 
 			this.addImage('UI_btn', 'assets/img/Park&City/UI_btn.png');
 
-			// Loading the sound effects
-			this.addAudio('wrong', './assets/audio/wrong.mp3');
-			this.addAudio('correct', './assets/audio/correct.mp3');
-
-			// Load the main theme
-			this.addAudio('music', './assets/audio/music.mp3');
-
 			break;
 
 		case 2:
@@ -181,13 +187,6 @@ PlayState.preload = function () {
 				this.addImage('hidden_' + [i], 'assets/img/Forest/svg/hidden_' + [i] + '.svg');
 
 			this.addImage('UI_btn', 'assets/img/Forest/UI_btn.png');
-
-			// Loading the sound effects
-			this.addAudio('wrong', './assets/audio/wrong.mp3');
-			this.addAudio('correct', './assets/audio/correct.mp3');
-
-			// Load the main theme
-			this.addAudio('music', './assets/audio/music.mp3');
 
 			break;
 
@@ -200,13 +199,6 @@ PlayState.preload = function () {
 
 			this.addImage('UI_btn', 'assets/img/Landscape/UI_btn.png');
 
-			// Loading the sound effects
-			this.addAudio('wrong', './assets/audio/wrong.mp3');
-			this.addAudio('correct', './assets/audio/correct.mp3');
-
-			// Load the main theme
-			this.addAudio('music', './assets/audio/music.mp3');
-
 			break;
 
 		case 4:
@@ -218,13 +210,6 @@ PlayState.preload = function () {
 
 			this.addImage('UI_btn', 'assets/img/Beach/UI_btn.png');
 
-			// Loading the sound effects
-			this.addAudio('wrong', './assets/audio/wrong.mp3');
-			this.addAudio('correct', './assets/audio/correct.mp3');
-
-			// Load the main theme
-			this.addAudio('music', './assets/audio/music.mp3');
-
 			break;
 
 		case 5:
@@ -235,13 +220,6 @@ PlayState.preload = function () {
 				this.addImage('hidden_' + [i], 'assets/img/Ocean/svg/hidden_' + [i] + '.svg');
 
 			this.addImage('UI_btn', 'assets/img/Ocean/UI_btn.png');
-
-			// Loading the sound effects
-			this.addAudio('wrong', './assets/audio/wrong.mp3');
-			this.addAudio('correct', './assets/audio/correct.mp3');
-
-			// Load the main theme
-			this.addAudio('music', './assets/audio/music.mp3');
 
 			break;
 	}
@@ -336,7 +314,7 @@ PlayState.create = function () {
 	this.wrong = new Kiwi.Sound.Audio(this.game, 'wrong', 1, false);
 
 	// Playing the main song
-	this.music = new Kiwi.Sound.Audio(this.game, 'music', 1, true);
+	this.music = new Kiwi.Sound.Audio(this.game, 'music', 1, false);
 
 	// Plays the music.
 	this.music.play();
@@ -623,68 +601,3 @@ PlayState.update = function ()
 		bg.transform.scaleY = heigh/heighBg;
 	}
 }
-
-var myGame = new Kiwi.Game('content', 'HiddenObjectBlueprint', null, { renderer: Kiwi.RENDERER_CANVAS });
-
-var loadingState = new Kiwi.State( "loadingState" );
-
-var preloader = new Kiwi.State( "preloader" );
-
-
-preloader.create = function() {
-
-    Kiwi.State.prototype.create.call( this );
-
-    this.game.states.switchState( "loadingState" );
-};
-
-loadingState.preload = function() {
-
-    Kiwi.State.prototype.preload.call( this );
-
-    this.game.states.rebuildLibraries();
-
-    this.game.stage.color = "#E0EDF1";
-
-    this.logo = new Kiwi.GameObjects.StaticImage(
-        this, this.textures[ "loadingImage" ], 150, 50 );
-
-    this.addChild(this.logo);
-
-    this.logo.alpha = 0;
-
-    this.tweenIn = this.game.tweens.create( this.logo );
-
-    this.tweenIn.to(
-        { alpha: 1 }, 1000, Kiwi.Animations.Tweens.Easing.Linear.None, false );
-
-    this.tweenIn.start();
-};
-
-
-loadingState.create = function() {
-
-    Kiwi.State.prototype.create.call( this );
-
-    console.log( "inside create of loadingState" );
-
-    this.tweenOut = this.game.tweens.create( this.logo );
-
-    this.tweenOut.to(
-        { alpha: 0 }, 1000, Kiwi.Animations.Tweens.Easing.Linear.None, false );
-
-    this.tweenOut.onComplete( this.switchToMain, this );
-
-    this.tweenOut.start();
-};
-
-loadingState.switchToMain = function() {
-    this.game.states.switchState( "PlayState" );
-};
-
-
-myGame.states.addState(PlayState);
-myGame.states.addState(loadingState);
-myGame.states.addState(preloader);
-
-myGame.states.switchState("preloader");
