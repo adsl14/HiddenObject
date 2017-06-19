@@ -241,12 +241,12 @@ PlayState.create = function () {
     this.addChild(bg);
 
     //Add a score
-    this.scoreText = new Kiwi.GameObjects.Textfield( this, "0", width - 160, 0, "#000", 50, 'normal', 'Arial Black' );
+    this.scoreText = new Kiwi.GameObjects.Textfield( this, "0", width * 0.91666666, 0, "#000", width*0.026041666, 'normal', 'Arial Black' );
     this.addChild( this.scoreText );
     this.scoreCount = 0;
 
     //Add a timer
-    this.counterText = new Kiwi.GameObjects.Textfield(this, "Tiempo: " + 120, 170, 0, "#000", 50, 'normal', 'Arial Black' );
+    this.counterText = new Kiwi.GameObjects.Textfield(this, "Tiempo: " + 120, 170, 0, "#000", width*0.026041666, 'normal', 'Arial Black' );
     this.addChild( this.counterText );
 
     // You can call the createTimer method on any clock to attach a timer to the clock.
@@ -261,13 +261,13 @@ PlayState.create = function () {
     this.timerCount = 120;
 
 	//Add a level text
-    this.progres = new Kiwi.GameObjects.Textfield( this, "Progreso:", 175, 60, "#000", 50, 'normal', 'Arial Black' );
+    this.progres = new Kiwi.GameObjects.Textfield( this, "Progreso:", 175, width * 0.03125, "#000", width*0.026041666, 'normal', 'Arial Black' );
     this.addChild(this.progres);
-    this.levelText = new Kiwi.GameObjects.Textfield( this, "0/25", 170, 120, "#000", 30, 'normal', 'Arial Black' );
+    this.levelText = new Kiwi.GameObjects.Textfield( this, "0/25", 170, width * 0.0625, "#000", width*0.015625, 'normal', 'Arial Black' );
 	this.addChild( this.levelText );
 
 	// EXP BAR // This bar will be used to determine the next level
-	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 25, 270, 133, 500, 15 );
+	this.nextLevelBar = new Kiwi.HUD.Widget.Bar (this.game, 0, 25, width*0.138020833, 143, width*0.260416666, width*0.0078125 );
 
 	// Change the style of the bar
 	switch (level)
@@ -314,7 +314,7 @@ PlayState.create = function () {
 	this.wrong = new Kiwi.Sound.Audio(this.game, 'wrong', 1, false);
 
 	// Playing the main song
-	this.music = new Kiwi.Sound.Audio(this.game, 'music', 1, false);
+	this.music = new Kiwi.Sound.Audio(this.game, 'music', 1, true);
 
 	// Plays the music.
 	this.music.play();
@@ -398,8 +398,8 @@ PlayState.addHiddenObject = function (objName, objX, objY) {
     this.addChild(this['hiddenObject' + objName]);
 
     //UI Base of each preview button
-    this['UIBase' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.UI_btn,10,10); // 50, heigh - 160
-    this.addChild(this['UIBase' + objName])
+    this.UIBase = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures.UI_btn,10,10); // 50, heigh - 160
+    this.addChild(this.UIBase);
 
     //UI preview image
     this['UIButton' + objName] = new Kiwi.GameObjects.Sprite(PlayState, PlayState.textures['hidden_' + objName]);
@@ -470,7 +470,7 @@ PlayState.clickObject = function (hiddenObj) {
 
 		//remove object and associated UI btn
 		hiddenObj.destroy();
-		this['UIBase' + hiddenObj.objName].destroy();
+		this.UIBase.destroy();
 		this['UIButton' + hiddenObj.objName].destroy();
 
 		// Add score
@@ -565,7 +565,26 @@ PlayState.update = function ()
 		maxY = heigh - 300; // Original --> 324, 500
 		minY = heigh/2-100;
 
-		this.scoreText.transform.x = width - 160;
+
+		this.scoreText.fontSize = width * 0.026041666;
+		this.scoreText.transform.x = width * 0.91666666;
+
+		this.counterText.fontSize = width * 0.026041666;
+		//this.counterText.transform.x = width * (0.088541666);
+
+		this.progres.fontSize = width * 0.026041666;
+		//this.progres.transform.x = width * 0.091145833;
+		this.progres.transform.y = width * 0.03125;
+
+		this.levelText.fontSize = width * 0.015625;
+		//this.levelText.transform.x = width * 0.088541666;
+		this.levelText.transform.y = width * 0.0625;
+
+		this.nextLevelBar.width = width * 0.260416666;
+		this.nextLevelBar.height = width * 0.0078125;
+		this.nextLevelBar.y = width * 0.074479166;
+		//this.nextLevelBar.x = width * 0.127604166;
+
 
 		// This will scale the objects to the new size of the screen
 		if(width > heigh)

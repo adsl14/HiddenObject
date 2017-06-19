@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1dba778c-3fe8-4816-b82d-04ed57d63682" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PlayState.js" afterPath="$PROJECT_DIR$/src/PlayState.js" />
     </list>
     <ignored path="HiddenObject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +41,8 @@
       <file leaf-file-name="PlayState.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PlayState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+            <state relative-caret-position="604">
+              <caret line="269" column="84" selection-start-line="269" selection-start-column="84" selection-end-line="269" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -60,11 +61,11 @@
         <option value="$PROJECT_DIR$/src/game.js" />
         <option value="$PROJECT_DIR$/src/States/PlayState.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/PlayState.js" />
         <option value="$PROJECT_DIR$/../../../Importar a la página/Importa lo que hay dentro de la carpeta (png)/public/js/games/PlayState.js" />
         <option value="$PROJECT_DIR$/../../../arauzo-games4visual-1d1a29d3780f/public/js/games/ObjetoOculto.js" />
         <option value="$PROJECT_DIR$/../../../Importar a la página/Importa lo que hay dentro de la carpeta (svg)/public/js/games/ObjetoOculto.js" />
         <option value="$PROJECT_DIR$/../../../Importar a la página/Importa lo que hay dentro de la carpeta (png)/public/js/games/ObjetoOculto.js" />
+        <option value="$PROJECT_DIR$/src/PlayState.js" />
       </list>
     </option>
   </component>
@@ -221,6 +222,7 @@
       <workItem from="1497648458105" duration="20798000" />
       <workItem from="1497717061748" duration="1999000" />
       <workItem from="1497780444164" duration="3287000" />
+      <workItem from="1497824503402" duration="15145000" />
     </task>
     <task id="LOCAL-00001" summary="Los objetos en el escenario ahora se escalan al tamaño de ventana">
       <created>1491172669582</created>
@@ -408,7 +410,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148061000" />
+    <option name="totallyTimeSpent" value="163206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1032" extended-state="6" />
@@ -470,7 +472,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="Código optimizado." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/PlayState.js</url>
+          <line>585</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -535,19 +546,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../Importar a la página/Importa lo que hay dentro de la carpeta (png)/public/js/games/PlayState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="226" column="58" selection-start-line="226" selection-start-column="58" selection-end-line="226" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Importar a la página/Importa lo que hay dentro de la carpeta (png)/public/js/games/PlayState.js" />
     <entry file="file://$PROJECT_DIR$/../../../Importar a la página/Importa lo que hay dentro de la carpeta (svg)/public/js/games/ObjetoOculto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="247" column="38" selection-start-line="247" selection-start-column="38" selection-end-line="247" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -555,7 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="531" column="9" selection-start-line="531" selection-start-column="9" selection-end-line="531" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -563,14 +565,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1469">
           <caret line="562" column="36" selection-start-line="562" selection-start-column="36" selection-end-line="562" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+        <state relative-caret-position="604">
+          <caret line="269" column="84" selection-start-line="269" selection-start-column="84" selection-end-line="269" selection-end-column="84" />
           <folding />
         </state>
       </provider>
